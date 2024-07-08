@@ -7,8 +7,8 @@ version: 2
 
 # Personal info
 name: Dong-Geun Kim
-title: Senior Network System Administrator
-email: brett.h@email.co.uk
+title: Ph.D student
+email: dgkim94@postech.ac.kr
 website: www.github.com/sproogen/resume-theme
 
 # Dark Mode (true/false/never)
@@ -16,7 +16,7 @@ darkmode: false
 
 # Social links
 twitter_username: facespics
-github_username:  sproogen
+github_username:  dgkim94
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
@@ -31,7 +31,7 @@ youtube_username: globalmtb
 
 # Additional icon links
 additional_links:
-- title: itsgoingto.be
+- title: Lab. hompage
   icon: fas fa-globe
   url: https://www.itsgoingto.be
 # - title: another link
@@ -109,7 +109,7 @@ content:
       - Knitting
       - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
 
-      Look at this cool image  
+      Look at this cool image
       ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
 
 # Footer
