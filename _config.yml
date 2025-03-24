@@ -95,14 +95,14 @@ content:
         description: |
           Leading the development of real-time mid-air haptic rendering technologies integrated with digital twin systems.
           I conducted research on enhancing the perceived intensity of weak mid-air tactile stimuli using cognitive modulation techniques within a digital twin framework.
-       additional_links:
+        additional_links:
            - title: Project Overview
              icon: fas fa-link
-             url: https://ieeexplore.ieee.org/abstract/document/10337769
+             url: https://link.springer.com/chapter/10.1007/978-3-031-70061-3_1
 
       - layout: left
         title: Tactile Korean System for the Visually and Hearing Impaired
-        sub_title: IITP
+        sub_title: Institute for Information & communications Technology Planning & Evaluation (IITP)
         caption: Jan. 2025 – Present
         description: |
           Conducting research on tactile delivery of korean language using vibrotactile arrays to support communication for people with sensory disabilities.
@@ -125,7 +125,7 @@ content:
         title: Ulsan National Institute of Science and Technology (UNIST)
         caption: 2014 – 2019
         sub_title: B.S. in Mechanical Engineering
-         quote: >
+        quote: >
           UNIST is one of Korea’s top science and technology universities, offering an interdisciplinary curriculum that combines fundamental engineering with innovation-driven research.
         description: |
           I studied mechanical engineering at UNIST, building a strong foundation in physical systems and dynamics. Based on the knowledge and problem-solving mindset I acquired there, I progressed into the IT Convergence program at POSTECH, where I now integrate mechanical and computational knowledge to conduct advanced haptic research.
