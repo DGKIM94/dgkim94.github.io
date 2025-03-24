@@ -145,21 +145,21 @@ content:
   - title: Publication
     layout: text
     content: | # this will include new lines to allow paragraphs
+      <strong style="font-size: 1.1em;">[International Journal]</strong>
+      [J1] <strong>Dong-Geun Kim</strong>, Seungmoon Choi, "Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition". IEEE Transactions on Haptics (Under Review)
 
-      **"Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition"**
-        *IEEE Transactions on Haptics (Under Review)*
-        Investigated the effects of wrist-based tactile feedback on the perception and recognition of mid-air ultrasonic patterns.
+      [J2] <strong>Dong-Geun Kim</strong>, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi, "Sound-to-Touch Crossmodal Pitch Matching for Short Sounds", IEEE Transactions on Haptics, 2024.
 
-      **"A Feasibility Study on Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration"**
-        *EuroHaptics 2024 Conference*
-        Presented initial findings on tactile enhancement methods for mid-air ultrasonic feedback.
+      <strong style="font-size: 1.1em;">[International Conference]</strong>
+      [C1] <strong>Dong-Geun Kim</strong> and Seungmoon Choi, "A Feasibility Study of Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration", Proceedings of EuroHaptics, 2024.
+      [C2] Gyeore Yun, Minjae Mun, Jungeun Lee, <strong>Dong-Geun Kim</strong>, Hong Z Tan, and Seungmoon Choi, "Generating Real-Time, Selective, and Multimodal Haptic Effects from Sound for Gaming Experience Enhancement", Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI), 2023.
+      [C3] Chaeyong Park, Jeongwoo Kim, <strong>Dong-Geun Kim</strong>, Seungjae Oh, and Seungmoon Choi, "Vibration-Augmented Buttons: Information Transmission Capacity and Application to Interaction Design", Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI), 2022.
+
+      <strong style="font-size: 1.1em;">[International Poster/Demo]</strong>
+      [PDA1] Gyeore Yun, Jungeun Lee, <strong>Dong-Geun Kim</strong>, Minjae Mun, Hong Z. Tan, and Seungmoon Choi, Real-Time, Selective, and Multimodal Haptic Feedback from Gameplay Sound, IEEE World Haptics Conference, 2023.
+      [PDA2] <strong>Dong-Geun Kim</strong>, Jungeun Lee, and Seungmoon Choi, "MMGrip: A Handheld Multimodal Haptic Device Combining Vibration, Impact, and Shear for Realistic Expression of Contact", Proceedings of SIGGRAPH Asia Posters, December 6-9, 2022.
 
 
-      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
-      - Rock climbing
-      - Gaming
-      - Knitting
-      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
 
 
 # Footer
