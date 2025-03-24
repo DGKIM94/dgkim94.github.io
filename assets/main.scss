@@ -4,8 +4,8 @@
 
 @import 'modern-resume-theme';
 
-.section-title {
-  font-size: 1rem;  // 기존보다 작게 (기본은 약 2rem)
+h2.section-title {
+  font-size: 1.3rem !important; /* 기본은 2rem 수준, 이걸 줄여줌 */
   font-weight: 600;
   margin-bottom: 1rem;
 }
