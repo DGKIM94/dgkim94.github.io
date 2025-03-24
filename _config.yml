@@ -52,6 +52,8 @@ about_content: | # this will include new lines to allow paragraphs
 
   I also enjoy <mark>watching baseball</mark> in my free time!
 
+  <a href="/files/DongGeunKim_CV.pdf" target="_blank"><i class="fas fa-file-download"></i> Download CV</a>
+
 content:
   - title: Funded Projects # Title for the section
     layout: list # Type of content section (list/text)
@@ -112,7 +114,7 @@ content:
     content:
       - layout: left
         title: POSTECH Kim Lab
-        caption: Sep. 2019 – May 2022
+        caption: Sep. 2019 – May 2020
         sub_title: Research Assistant
         description: |
           Developed high-frequency ultrasound transducers for tactile applications.
@@ -133,6 +135,12 @@ content:
         title: Pohang University of Science and Technology (POSTECH)
         caption: 2020 – Present
         sub_title: Integrated M.S./Ph.D. in IT Convergence Engineering
+        quote: >
+          POSTECH is a world-class research-oriented university consistently ranked among the top in Asia, renowned for its cutting-edge research environment and strong emphasis on interdisciplinary innovation.
+        description: |
+          I am currently pursuing an integrated M.S./Ph.D. program in IT Convergence Engineering at POSTECH.
+          By leveraging both mechanical and computational knowledge, I am actively conducting interdisciplinary research in the field of haptics, focusing on tactile perception, mid-air stimulation, and language-based tactile communication.
+          This environment allows me to collaborate with experts across domains and develop impactful solutions in next-generation interaction technologies.
 
   - title: Publication
     layout: text
@@ -143,8 +151,6 @@ content:
       - Knitting
       - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
 
-      Look at this cool image
-      ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
 
 # Footer
 footer_show_references: true
