@@ -57,12 +57,12 @@ content:
     layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Super awesome project
-        link: github.com/sproogen
+        title: ultimodal Haptic Tool for AR Sports
+        sub_title: Korea Creative Content Agency (KOCCA)
         # link_text: Project Website
-        additional_links:
-          - title:  Multimodal Haptic Tool for AR Sports
-            sub_title: Korea Creative Content Agency (KOCCA)
+        #additional_links:
+          #- title:  Multimodal Haptic Tool for AR Sports
+          #  sub_title: Korea Creative Content Agency (KOCCA)
             #icon: fab fa-github
             #url: github.com/sproogen/modern-resume-theme
           # - title:  Github page for project (eg. sproogen/modern-resume-theme)
@@ -72,6 +72,26 @@ content:
         description: |
           Developed multimodal haptic feedback tools to enhance user experience in AR-based sports applications.
 
+      - layout: left
+        title: Performance Metric for User Experience
+        sub_title: Google
+        caption: Sep. 2021 – Jul. 2023
+        description: |
+          Designed performance metrics to assess and enhance user experience in interactive digital environments.
+
+      - layout: left
+        title: Mid-air Haptic Rendering for Digital Twin (PM)
+        sub_title: Institute for Information & communications Technology Planning & Evaluation (IITP)
+        caption: Jan. 2023 – Dec. 2024
+        description: |
+          Leading the development of real-time mid-air haptic rendering technologies integrated with digital twin systems.
+
+      - layout: left
+        title: Tactile Korean System for the Visually and Hearing Impaired
+        sub_title: IITP
+        caption: Jan. 2025 – Present
+        description: |
+          Conducting research on tactile delivery of Hangul using vibrotactile arrays to support communication for people with sensory disabilities.
 
   - title: Experience # Title for the section
     layout: list # Type of content section (list/text)
