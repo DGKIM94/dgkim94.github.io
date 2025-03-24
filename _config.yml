@@ -145,6 +145,16 @@ content:
   - title: Publication
     layout: text
     content: | # this will include new lines to allow paragraphs
+
+      **"Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition"**
+        *IEEE Transactions on Haptics (Under Review)*
+        Investigated the effects of wrist-based tactile feedback on the perception and recognition of mid-air ultrasonic patterns.
+
+      **"A Feasibility Study on Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration"**
+        *EuroHaptics 2024 Conference*
+        Presented initial findings on tactile enhancement methods for mid-air ultrasonic feedback.
+
+
       Alongside my interests in networks and software engineering some of my other interests and hobbies are:
       - Rock climbing
       - Gaming
