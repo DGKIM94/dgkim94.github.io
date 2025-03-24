@@ -3,3 +3,9 @@
 ---
 
 @import 'modern-resume-theme';
+
+.section-title {
+  font-size: 1.4rem;  // 기존보다 작게 (기본은 약 2rem)
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
