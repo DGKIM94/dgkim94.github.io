@@ -9,23 +9,23 @@ version: 2
 name: Dong-Geun Kim
 title: Ph.D student
 email: dgkim94@postech.ac.kr
-website: interaction.postech.ac.kr
+#website: interaction.postech.ac.kr
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
-twitter_username: facespics
+#twitter_username: facespics
 github_username:  dgkim94
 # stackoverflow_username: "00000001"
 # dribbble_username: jekyll
 # facebook_username: jekyll
 # flickr_username: jekyll
-instagram_username: jameswgrant
-linkedin_username: jameswgrant
+instagram_username: dg_kim331
+linkedin_username: dong-geun-kim
 # xing_username: jekyll
 # pinterest_username: jekyll
-youtube_username: globalmtb
+#youtube_username: globalmtb
 # googleplus_username: +jekyll
 # orcid_username: 0000-0000-0000-0000
 
@@ -33,7 +33,7 @@ youtube_username: globalmtb
 additional_links:
 - title: Lab. hompage
   icon: fas fa-globe
-  url: https://www.itsgoingto.be
+  url: interaction.postech.ac.kr
 # - title: another link
 #   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
 #   url: Link url (eg. https://google.com)
