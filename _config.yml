@@ -9,91 +9,120 @@ version: 2
 name: Dong-Geun Kim
 title: Ph.D student
 email: dgkim94@postech.ac.kr
+#website: interaction.postech.ac.kr
 
 # Dark Mode (true/false/never)
 darkmode: false
 
 # Social links
+#twitter_username: facespics
 github_username:  dgkim94
+# stackoverflow_username: "00000001"
+# dribbble_username: jekyll
+# facebook_username: jekyll
+# flickr_username: jekyll
 instagram_username: dg_kim331
 linkedin_username: dong-geun-kim-61609b315
+# xing_username: jekyll
+# pinterest_username: jekyll
+#youtube_username: globalmtb
+# googleplus_username: +jekyll
+# orcid_username: 0000-0000-0000-0000
 
 # Additional icon links
 additional_links:
 - title: Lab. hompage
   icon: fas fa-globe
   url: interaction.postech.ac.kr
+# - title: another link
+#   icon: font awesome brand icon name (eg. fab fa-twitter) (https://fontawesome.com/icons?d=gallery&m=free)
+#   url: Link url (eg. https://google.com)
+
+# Google Analytics and Tag Manager
+# Using more than one of these may cause issues with reporting
+# gtm: "GTM-0000000"
+# gtag: "UA-00000000-0"
+# google_analytics: "UA-00000000-0"
 
 # About Section
+# about_title: About Me
 about_profile_image: images/dgkim.jpg
-about_content: |
+about_content: | # this will include new lines to allow paragraphs
   Hello, I'm Dong-Geun Kim, a Ph.D. student at POSTECH. My research interests include <mark>mid-air haptic rendering</mark>, <mark>haptic perception</mark>, and <mark>tactile language communication</mark>.
 
   I also enjoy <mark>watching baseball</mark> in my free time!
 
 content:
-  - title: Funded Projects
-    layout: list
+  - title: Funded Projects # Title for the section
+    layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Multimodal Haptic Tool for AR Sports
-        sub_title: Korea Creative Content Agency (KOCCA)
+        title: Super awesome project
+        link: github.com/sproogen
+        # link_text: Project Website
+        additional_links:
+          - title:  Multimodal Haptic Tool for AR Sports
+            sub_title: Korea Creative Content Agency (KOCCA)
+            #icon: fab fa-github
+            #url: github.com/sproogen/modern-resume-theme
+          # - title:  Github page for project (eg. sproogen/modern-resume-theme)
+          #   icon: fab fa-github
+          #   url: Link to project (eg. sproogen.github.io/modern-resume-theme)
         caption: Jun. 2020 – Dec. 2022
         description: |
           Developed multimodal haptic feedback tools to enhance user experience in AR-based sports applications.
 
-      - layout: left
-        title: Performance Metric for User Experience
-        sub_title: Google
-        caption: Sep. 2021 – Jul. 2023
-        description: |
-          Designed performance metrics to assess and enhance user experience in interactive digital environments.
 
-      - layout: left
-        title: Mid-air Haptic Rendering for Digital Twin (PM)
-        sub_title: Institute for Information & communications Technology Planning & Evaluation (IITP)
-        caption: Jan. 2023 – Dec. 2024
-        description: |
-          Leading the development of real-time mid-air haptic rendering technologies integrated with digital twin systems.
-
-      - layout: left
-        title: Tactile Korean System for the Visually and Hearing Impaired
-        sub_title: IITP
-        caption: Jan. 2025 – Present
-        description: |
-          Conducting research on tactile delivery of Hangul using vibrotactile arrays to support communication for people with sensory disabilities.
-
-  - title: Education
-    layout: list
+  - title: Experience # Title for the section
+    layout: list # Type of content section (list/text)
     content:
       - layout: left
-        title: Ulsan National Institute of Science and Technology (UNIST)
-        caption: 2014 – 2019
-        sub_title: B.S. in Mechanical Engineering
+        title: The Boring Company
+        link: boringcompany.com
+        # link_text: boringcompany.com
+        sub_title: Senior Network System Administrator
+        caption: November 2017 - Present
+        quote: >
+          Solving 21st century problems by diging holes and making game changing products like the *not a flamethrower*
+        description: | # this will include new lines to allow paragraphs
+            Every company needs its networks properly administered and The Boring Compay is no exception. Digging holes is hard and I play my part making sure the whole company stays connected. I lead a team of 5 people and enjoy driving the company to try new technologies.
 
-      - layout: left
-        title: Pohang University of Science and Technology (POSTECH)
-        caption: 2020 – Present
-        sub_title: Integrated M.S./Ph.D. in IT Convergence Engineering
-
-  - title: Publications
-    layout: list
+  - title: Education # Title for the section
+    layout: list # Type of content section (list/text)
     content:
-      - - layout: left
-          title: "Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition"
-          sub_title: IEEE Transactions on Haptics (Under Review)
-          description: |
-          Investigated the effects of wrist-based tactile feedback on the perception and recognition of mid-air ultrasonic patterns.
-
-
       - layout: left
-        title: A Feasibility Study on Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration
-        sub_title: EuroHaptics 2024 Conference
-        description: |
-          Presented initial findings on tactile enhancement methods for mid-air ultrasonic feedback.
+        title: Harvard University
+        caption: 2010 - 2013
+        sub_title: BSc Computer Science
+        quote: >
+          Established in 1636, Harvard is the oldest higher education institution in the United States, and is widely regarded in terms of its influence, reputation, and academic pedigree as a leading university in not just the US but also the world.
+        description: | # this will include new lines to allow paragraphs
+          During my time at Harvard I learnt most of my key skills that have I have taken through my career such as teamwork and working to tight deadlines. I thouroughly enjoyed my time as university and learnt a lot about a healthy work life balance.
 
-      - layout: left
-        title: Encoding Korean Letters through Vibrotactile Patterns on the Forearm
-        sub_title: In preparation
-        description: |
-          Designing a tactile communication system based on Korean Hangul using a 3x3 vibrotactile array.
+          I spent a lot of my free time as a committee member of the *Harvard Mountaineering Club* taking on roles such as *Trip Secretary* and *Vice-President*.
+
+  - title: A Little More About Me
+    layout: text
+    content: | # this will include new lines to allow paragraphs
+      Alongside my interests in networks and software engineering some of my other interests and hobbies are:
+      - Rock climbing
+      - Gaming
+      - Knitting
+      - [Becoming a ninja](https://www.youtube.com/watch?v=vtg4o__aRMg)
+
+      Look at this cool image
+      ![Trees](/modern-resume-theme/images/landscape-trees.jpg "Trees")
+
+# Footer
+footer_show_references: true
+# references_title: References on request (Override references text)
+
+# Build settings
+remote_theme: sproogen/resume-theme
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+ - jekyll-seo-tag
