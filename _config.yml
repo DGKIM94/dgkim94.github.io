@@ -84,7 +84,10 @@ content:
         description: |
           Designed performance metrics to assess and enhance user experience in interactive digital environments.
           I conducted research on haptic generation to improve user experience through <mark>cross-modal matching</mark> of sound and touch.
-
+        additional_links:
+            - title: Project Overview
+              icon: fas fa-link
+              url: https://ieeexplore.ieee.org/abstract/document/10337769
       - layout: left
         title: Mid-air Haptic Rendering for Digital Twin (PM)
         sub_title: Institute for Information & communications Technology Planning & Evaluation (IITP)
@@ -92,6 +95,10 @@ content:
         description: |
           Leading the development of real-time mid-air haptic rendering technologies integrated with digital twin systems.
           I conducted research on enhancing the perceived intensity of weak mid-air tactile stimuli using cognitive modulation techniques within a digital twin framework.
+       additional_links:
+           - title: Project Overview
+             icon: fas fa-link
+             url: https://ieeexplore.ieee.org/abstract/document/10337769
 
       - layout: left
         title: Tactile Korean System for the Visually and Hearing Impaired
@@ -122,10 +129,10 @@ content:
           UNIST is one of Korea’s top science and technology universities, offering an interdisciplinary curriculum that combines fundamental engineering with innovation-driven research.
         description: |
           I studied mechanical engineering at UNIST, building a strong foundation in physical systems and dynamics. Based on the knowledge and problem-solving mindset I acquired there, I progressed into the IT Convergence program at POSTECH, where I now integrate mechanical and computational knowledge to conduct advanced haptic research.
-      -layout: left
-       title: Pohang University of Science and Technology (POSTECH)
-       caption: 2020 – Present
-       sub_title: Integrated M.S./Ph.D. in IT Convergence Engineering
+      - layout: left
+        title: Pohang University of Science and Technology (POSTECH)
+        caption: 2020 – Present
+        sub_title: Integrated M.S./Ph.D. in IT Convergence Engineering
 
   - title: Publication
     layout: text
