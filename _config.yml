@@ -79,11 +79,12 @@ content:
   - title: Publications
     layout: list
     content:
-      - layout: left
-        title: Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition
-        sub_title: IEEE Transactions on Haptics (Under Review)
-        description: |
+      - - layout: left
+          title: "Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition"
+          sub_title: IEEE Transactions on Haptics (Under Review)
+          description: |
           Investigated the effects of wrist-based tactile feedback on the perception and recognition of mid-air ultrasonic patterns.
+
 
       - layout: left
         title: A Feasibility Study on Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration
