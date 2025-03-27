@@ -91,7 +91,7 @@ content:
               icon: fas fa-link
               url: https://ieeexplore.ieee.org/abstract/document/10337769
       - layout: left
-        title: Mid-air Haptic Rendering for Digital Twin  <span style="color: red;">(PM)</span>
+        title: Mid-air Haptic Rendering for Digital Twin  <mark>(PM)</mark>
         sub_title: Institute for Information & communications Technology Planning & Evaluation (IITP)
         caption: Jan. 2023 – Dec. 2024
         description: |
