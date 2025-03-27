@@ -192,3 +192,16 @@ p.quote {
     margin-top: 1rem;
   }
 }
+/* 소속 기관 (sub_title) */
+.layout .details p b {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* 날짜 (caption) */
+.layout .details p {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 0.2rem;
+}
