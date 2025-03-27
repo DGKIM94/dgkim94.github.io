@@ -101,6 +101,13 @@ content:
            - title: Project Overview
              icon: fas fa-link
              url: https://link.springer.com/chapter/10.1007/978-3-031-70061-3_1
+      - layout: left
+        title : Investigating the Luxuriousness of Haptic Warning on the Steering Wheel
+        sub_title : Hyundai Motors
+        caption : Apr. 2023 - Apr. 2024
+        description: |
+          Explored how users perceive the luxuriousness of haptic warning feedback on a car steering wheel.
+          Focused on designing haptic alerts that not only convey urgency but also deliver a refined and premium tactile experience.
 
       - layout: left
         title: Tactile Korean System for the Visually and Hearing Impaired <mark>(PM)</mark>
