@@ -154,7 +154,7 @@ content:
     content: | # this will include new lines to allow paragraphs
       <strong style="font-size: 1.1em;">[International Journal]</strong>
 
-      [J1] <strong>Dong-Geun Kim</strong>, Seungmoon Choi, "Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition". IEEE Transactions on Haptics, 2025
+      [J1] <strong>Dong-Geun Kim</strong>, Seungmoon Choi, <a href="https://ieeexplore.ieee.org/document/11045208" target="_blank">"Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition". IEEE Transactions on Haptics, 2025
 
       [J2] <strong>Dong-Geun Kim</strong>, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi, "Sound-to-Touch Crossmodal Pitch Matching for Short Sounds", IEEE Transactions on Haptics, 2024.
 
