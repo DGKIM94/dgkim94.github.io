@@ -52,7 +52,7 @@ about_content: | # this will include new lines to allow paragraphs
 
   I also enjoy <mark>playing baseball</mark> in my free time!
 
-  <a href="/files/DongGeunKim_CV.pdf" target="_blank"><i class="fas fa-file-download"></i> Download CV</a>
+
 
 content:
   - title: Funded Projects # Title for the section
