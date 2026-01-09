@@ -305,7 +305,7 @@ tabs.forEach(tab => {
 
 // [Fancy 기능] 타이핑 효과 함수
 // 수정된 부분: 문구를 "HCI & Haptics Researcher"로 변경
-const textToType = "HCI & Haptics Researcher";
+const textToType = "Haptics Researcher";
 
 const typingElement = document.querySelector('.typing-text');
 let typeIndex = 0;
