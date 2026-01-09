@@ -1,4 +1,4 @@
-// 1. 논문 데이터 관리 (업데이트 완료)
+// 1. 논문 데이터 관리
 // type: 'journal', 'conf_intl', 'poster_intl', 'conf_dom', 'poster_dom'
 const papers = [
     {
@@ -163,10 +163,7 @@ function renderPublications() {
 
     categories.forEach(cat => {
         const listElement = document.getElementById(cat.id);
-        if (!listElement) {
-            // 해당 카테고리 리스트가 HTML에 없으면 스킵 (경고 로그는 제거)
-            return;
-        }
+        if (!listElement) return;
 
         const filteredPapers = papers
             .filter(p => p.type === cat.type)
@@ -213,16 +210,28 @@ function renderAwards() {
     }).join('');
 }
 
-// [함수 3] Recent News 자동 생성
+// [함수 3] Recent News 자동 생성 (논문 타입별 문구 수정됨)
 function renderRecentNews() {
     const listElement = document.getElementById('recent-news-list');
     if (!listElement) return;
 
-    // 1. 논문 뉴스 변환
-    const paperNews = papers.map(p => ({
-        year: p.year,
-        content: `Paper accepted to <strong>${p.venue}</strong>.`
-    }));
+    // 1. 논문 뉴스 변환 (타입별 문구 분기)
+    const paperNews = papers.map(p => {
+        let typeText = "Paper"; // 기본값
+
+        if (p.type === 'journal') {
+            typeText = "Journal paper";
+        } else if (p.type.includes('conf')) { // conf_intl, conf_dom
+            typeText = "Conference paper";
+        } else if (p.type.includes('poster')) { // poster_intl, poster_dom
+            typeText = "Poster";
+        }
+
+        return {
+            year: p.year,
+            content: `${typeText} accepted to <strong>${p.venue}</strong>.`
+        };
+    });
 
     // 2. 수상 뉴스 변환
     const awardNews = awards.map(a => ({
@@ -234,7 +243,7 @@ function renderRecentNews() {
     const allNews = [...paperNews, ...awardNews]
         .sort((a, b) => b.year - a.year);
 
-    const recentItems = allNews.slice(0, 5);
+    const recentItems = allNews.slice(0, 5); // 최신 5개만 보여줌
 
     // 4. HTML 생성
     listElement.innerHTML = recentItems.map(item => {
