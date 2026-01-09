@@ -1,4 +1,4 @@
-// 1. 논문 데이터 관리
+// 1. 논문 데이터 관리 (업데이트 완료)
 // type: 'journal', 'conf_intl', 'poster_intl', 'conf_dom', 'poster_dom'
 const papers = [
     {
@@ -106,13 +106,27 @@ const papers = [
         title: "음향-촉감 교차 모달 스펙트럼 매칭",
         authors: "Dong-Geun Kim, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi",
         venue: "Korean Institute of Next Generation Computing",
-
+        link: "",
+        pdf: ""
     }
-
-
 ];
 
-// 2. 탭 기능 및 논문 렌더링 실행
+// 2. 수상(Awards) 데이터 관리
+const awards = [
+    {
+        year: 2024,
+        title: "Best ToH Short Paper Award (Finalist)",
+        venue: "IEEE Haptics Symposium"
+    },
+    {
+        year: 2022,
+        title: "Best Paper Award",
+        venue: "Korean Institute of Information Scientists and Engineers (KIISE)"
+    }
+];
+
+
+// 3. 실행 및 렌더링
 document.addEventListener('DOMContentLoaded', () => {
     // 탭 기능
     const tabs = document.querySelectorAll('.tab-btn');
@@ -128,58 +142,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // 논문 렌더링 실행
+    // 화면 렌더링 함수들 실행
     renderPublications();
+    renderAwards();      // CV 탭의 Awards
+    renderRecentNews();  // About 탭의 Recent News
 });
 
-// 3. 논문 렌더링 함수
+
+// [함수 1] 논문 목록 렌더링
 function renderPublications() {
-    console.log("Rendering Publications..."); // 디버깅용 로그
-
-    const categories = [
-        { type: 'journal', id: 'journal-list', prefix: 'J' },
-        { type: 'conf_intl', id: 'conf-intl-list', prefix: 'C' },
-        { type: 'poster_intl', id: 'poster-intl-list', prefix: 'PDA' },
-        { type: 'conf_dom', id: 'conf-dom-list', prefix: 'DC' },
-        { type: 'poster_dom', id: 'poster-dom-list', prefix: 'DP' }
-    ];
-
-    categories.forEach(cat => {
-        const listElement = document.getElementById(cat.id);
-        if (!listElement) {
-            console.warn(`Element with id ${cat.id} not found.`);
-            return;
-        }
-
-        const filteredPapers = papers
-            .filter(p => p.type === cat.type)
-            .sort((a, b) => b.year - a.year);
-
-        listElement.innerHTML = filteredPapers.map((paper, index) => {
-            // 최신순이므로 번호는 전체 개수에서 index를 빼거나, 그냥 1부터 매길 수 있음
-            // 여기서는 최신순으로 J1, J2... (index + 1) 사용
-            const number = `${cat.prefix}${index + 1}`;
-
-            // 이름 볼드 처리
-            const highlightedAuthors = paper.authors.replace("Dong-Geun Kim", "<strong>Dong-Geun Kim</strong>");
-
-            let linksHtml = '';
-            if (paper.link) {
-                linksHtml += `<a href="${paper.link}" target="_blank" class="resource-link">[Link]</a>`;
-            }
-            if (paper.pdf) {
-                linksHtml += `<a href="${paper.pdf}" target="_blank" class="resource-link pdf">[PDF]</a>`;
-            }
-
-            return `
-                <li>
-                    [${number}] ${highlightedAuthors},
-                    "${paper.title}",
-                    <em>${paper.venue}</em>, ${paper.year}.
-                    <br>
-                    ${linksHtml}
-                </li>
-            `;
-        }).join('');
-    });
-}
