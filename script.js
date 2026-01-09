@@ -121,7 +121,7 @@ const awards = [
     {
         year: 2022,
         title: "Best Paper Award",
-        venue: "Korean Institute of Information Scientists and Engineers (KIISE)"
+        venue: "KSC (KIISE)"
     }
 ];
 
@@ -151,3 +151,97 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // [함수 1] 논문 목록 렌더링
 function renderPublications() {
+    console.log("Rendering Publications...");
+
+    const categories = [
+        { type: 'journal', id: 'journal-list', prefix: 'J' },
+        { type: 'conf_intl', id: 'conf-intl-list', prefix: 'C' },
+        { type: 'poster_intl', id: 'poster-intl-list', prefix: 'PDA' },
+        { type: 'conf_dom', id: 'conf-dom-list', prefix: 'DC' },
+        { type: 'poster_dom', id: 'poster-dom-list', prefix: 'DP' }
+    ];
+
+    categories.forEach(cat => {
+        const listElement = document.getElementById(cat.id);
+        if (!listElement) {
+            // 해당 카테고리 리스트가 HTML에 없으면 스킵 (경고 로그는 제거)
+            return;
+        }
+
+        const filteredPapers = papers
+            .filter(p => p.type === cat.type)
+            .sort((a, b) => b.year - a.year);
+
+        listElement.innerHTML = filteredPapers.map((paper, index) => {
+            const number = `${cat.prefix}${index + 1}`;
+            const highlightedAuthors = paper.authors.replace("Dong-Geun Kim", "<strong>Dong-Geun Kim</strong>");
+
+            let linksHtml = '';
+            if (paper.link) {
+                linksHtml += `<a href="${paper.link}" target="_blank" class="resource-link">[Link]</a>`;
+            }
+            if (paper.pdf) {
+                linksHtml += `<a href="${paper.pdf}" target="_blank" class="resource-link pdf">[PDF]</a>`;
+            }
+
+            return `
+                <li>
+                    [${number}] ${highlightedAuthors},
+                    "${paper.title}",
+                    <em>${paper.venue}</em>, ${paper.year}.
+                    <br>
+                    ${linksHtml}
+                </li>
+            `;
+        }).join('');
+    });
+}
+
+// [함수 2] 수상(Awards) 목록 렌더링
+function renderAwards() {
+    const listElement = document.getElementById('award-list');
+    if (!listElement) return;
+
+    const sortedAwards = awards.sort((a, b) => b.year - a.year);
+
+    listElement.innerHTML = sortedAwards.map(award => {
+        return `
+            <li>
+                <strong>${award.title}</strong>, ${award.venue}, ${award.year}
+            </li>
+        `;
+    }).join('');
+}
+
+// [함수 3] Recent News 자동 생성
+function renderRecentNews() {
+    const listElement = document.getElementById('recent-news-list');
+    if (!listElement) return;
+
+    // 1. 논문 뉴스 변환
+    const paperNews = papers.map(p => ({
+        year: p.year,
+        content: `Paper accepted to <strong>${p.venue}</strong>.`
+    }));
+
+    // 2. 수상 뉴스 변환
+    const awardNews = awards.map(a => ({
+        year: a.year,
+        content: `<strong>${a.title}</strong> at ${a.venue}.`
+    }));
+
+    // 3. 합치고 정렬 및 상위 5개 추출
+    const allNews = [...paperNews, ...awardNews]
+        .sort((a, b) => b.year - a.year);
+
+    const recentItems = allNews.slice(0, 5);
+
+    // 4. HTML 생성
+    listElement.innerHTML = recentItems.map(item => {
+        return `
+            <li>
+                <span class="date">${item.year}</span> ${item.content}
+            </li>
+        `;
+    }).join('');
+}
