@@ -185,3 +185,63 @@ p { margin-bottom: 15px; color: #444; }
     font-weight: 500;
 }
 .language-list li { margin-bottom: 5px; }
+
+/* 1. 프로젝트 카드 & 논문 리스트 호버 효과 */
+.project-card, .pub-list li, .resume-item {
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); /* 부드러운 움직임 */
+    border-radius: 8px; /* 모서리 살짝 둥글게 */
+    padding: 15px; /* 내부 여백 */
+}
+
+/* 마우스 올렸을 때 */
+.project-card:hover, .pub-list li:hover {
+    transform: translateY(-5px); /* 위로 5px 둥실 */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* 부드러운 그림자 */
+    background-color: #fafafa; /* 아주 연한 회색 배경 */
+}
+
+/* 2. 탭 버튼 클릭감 (눌리는 느낌) */
+.tab-btn:active, .link-btn:active {
+    transform: scale(0.95);
+}
+
+/* 3. 링크 버튼(PDF, Link) 예쁘게 꾸미기 */
+.resource-link {
+    display: inline-block;
+    padding: 2px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.85em;
+    color: #555;
+    transition: all 0.2s;
+    margin-right: 5px;
+}
+
+.resource-link:hover {
+    background-color: #333; /* 검은색 배경 */
+    color: #fff; /* 흰색 글씨 */
+    border-color: #333;
+}
+
+.resource-link.pdf {
+    color: #d32f2f; /* PDF는 붉은색 포인트 */
+    border-color: #d32f2f;
+}
+
+.resource-link.pdf:hover {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* 스크롤 애니메이션용 클래스 */
+.fade-in-section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-section.visible {
+    opacity: 1;
+    transform: none;
+}

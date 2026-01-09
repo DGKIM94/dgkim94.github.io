@@ -254,3 +254,49 @@ function renderRecentNews() {
         `;
     }).join('');
 }
+
+// [추가 기능] 스크롤 애니메이션 관찰자 (Intersection Observer)
+const observerOptions = {
+    threshold: 0.1 // 10% 정도 보이면 애니메이션 시작
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target); // 한 번 나타나면 관찰 중단
+        }
+    });
+}, observerOptions);
+
+// 요소를 관찰 대상에 등록하는 함수
+function observeElements() {
+    // 프로젝트 카드, 논문 리스트 아이템, 수상 내역 등을 모두 선택
+    const elements = document.querySelectorAll('.project-card, .pub-list li, .resume-item, .news-list li, .award-list li');
+
+    elements.forEach((el, index) => {
+        el.classList.add('fade-in-section'); // 기본 투명 상태 클래스 추가
+        // 순차적으로 나타나게 딜레이 주기 (선택사항)
+        el.style.transitionDelay = `${index % 5 * 0.1}s`;
+        observer.observe(el);
+    });
+}
+
+// 탭을 클릭하거나 페이지가 로드될 때마다 관찰 실행
+document.addEventListener('DOMContentLoaded', () => {
+    // ... 기존 코드들 ...
+
+    // (기존 렌더링 함수들 아래에 추가)
+    setTimeout(observeElements, 100); // 렌더링이 끝난 직후 실행
+});
+
+// 탭 클릭 시에도 애니메이션 재실행을 위해 탭 이벤트 리스너 안에도 추가
+const tabs = document.querySelectorAll('.tab-btn');
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // ... 기존 탭 전환 코드 ...
+
+        // 탭 전환 후 약간의 시간 뒤에 애니메이션 적용
+        setTimeout(observeElements, 100);
+    });
+});
