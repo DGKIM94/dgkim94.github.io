@@ -1,4 +1,5 @@
-/* 기본 설정 */
+/* style.css 전체 코드 덮어쓰기 권장하지만, 바뀐 부분만 추가해도 됩니다 */
+
 :root {
     --primary-color: #C80150;
     --text-dark: #333;
@@ -20,7 +21,6 @@ body {
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; padding: 0; }
 
-/* 레이아웃 */
 .container {
     display: flex;
     max-width: 1200px;
@@ -32,13 +32,11 @@ ul { list-style: none; padding: 0; }
     min-height: 85vh;
 }
 
-/* 모바일 대응 */
 @media (max-width: 768px) {
     .container { flex-direction: column; margin: 0; border-radius: 0; min-height: 100vh; }
     .profile-section { width: 100% !important; border-right: none !important; border-bottom: 1px solid var(--border-color); }
 }
 
-/* 왼쪽 프로필 사이드바 */
 .profile-section {
     width: 300px;
     background: #fff;
@@ -71,7 +69,6 @@ ul { list-style: none; padding: 0; }
 }
 .social-links a:hover { color: var(--primary-color); }
 
-/* 오른쪽 메인 컨텐츠 */
 .content-section {
     flex-grow: 1;
     padding: 40px;
@@ -79,12 +76,11 @@ ul { list-style: none; padding: 0; }
     flex-direction: column;
 }
 
-/* 탭 네비게이션 */
 .tabs {
     display: flex;
     border-bottom: 2px solid var(--bg-light);
     margin-bottom: 30px;
-    flex-wrap: wrap; /* 모바일에서 줄바꿈 */
+    flex-wrap: wrap;
 }
 
 .tab-btn {
@@ -116,7 +112,6 @@ ul { list-style: none; padding: 0; }
     background-color: var(--primary-color);
 }
 
-/* 탭 컨텐츠 */
 .tab-content { display: none; animation: fadeIn 0.4s ease; }
 .tab-content.active { display: block; }
 
@@ -125,13 +120,11 @@ ul { list-style: none; padding: 0; }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* 요소 스타일 */
 h2 { font-size: 1.5rem; margin-bottom: 20px; color: #222; border-left: 4px solid var(--primary-color); padding-left: 10px; }
 h3 { font-size: 1.2rem; margin-top: 30px; margin-bottom: 10px; color: #444; }
 p { margin-bottom: 15px; color: #444; }
 .highlight { background: #ffebeb; padding: 2px 5px; border-radius: 4px; font-weight: 500; }
 
-/* 프로젝트 카드 */
 .project-card {
     background: var(--bg-light);
     padding: 20px;
@@ -145,25 +138,41 @@ p { margin-bottom: 15px; color: #444; }
 .project-card .subtitle { font-size: 0.9rem; color: #777; margin-bottom: 10px; }
 .link-btn { font-size: 0.85rem; color: var(--primary-color); font-weight: 600; }
 
-/* 출판물 리스트 (줄바꿈 허용) */
+/* 논문 리스트 스타일 */
 .pub-list li {
     margin-bottom: 15px;
     padding-left: 15px;
     border-left: 2px solid #ddd;
-    /* 텍스트가 잘리지 않도록 설정 */
     white-space: normal;
-    overflow: visible;
-    text-overflow: clip;
 }
-.pdf-link { font-size: 0.8rem; color: var(--primary-color); margin-left: 5px; font-weight: bold; }
 
-/* 이력서 & 스킬 */
+/* [Link], [PDF] 버튼 스타일 (새로 추가됨) */
+.resource-link {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-right: 8px;
+    margin-top: 4px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.resource-link:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
+.resource-link.pdf {
+    color: #444; /* PDF는 약간 다른 색상으로 구분하고 싶으면 사용 */
+}
+
+
 .resume-item { margin-bottom: 25px; }
 .resume-item h4 { margin: 0 0 5px; font-size: 1.1rem; }
 .resume-item .date { font-size: 0.85rem; color: #888; margin-bottom: 5px; }
 .resume-item em { color: #555; }
 
-/* 스킬 태그 디자인 */
 .skills-container { margin-bottom: 30px; }
 .skill-category h3 { margin-top: 15px; font-size: 1rem; color: #555; }
 .skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
