@@ -25,8 +25,8 @@ const papers = [
         title: "A Feasibility Study of Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration",
         authors: "Dong-Geun Kim and Seungmoon Choi",
         venue: "Proceedings of EuroHaptics",
-        link: "",
-        pdf: ""
+        link: "https://dl.acm.org/doi/10.1007/978-3-031-70061-3_1",
+        pdf: "files/1071-doc.pdf"
     },
     {
         type: "conf_intl",
@@ -34,8 +34,8 @@ const papers = [
         title: "Generating Real-Time, Selective, and Multimodal Haptic Effects from Sound for Gaming Experience Enhancement",
         authors: "Gyeore Yun, Minjae Mun, Jungeun Lee, Dong-Geun Kim, Hong Z Tan, and Seungmoon Choi",
         venue: "Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI)",
-        link: "",
-        pdf: ""
+        link: "https://dl.acm.org/doi/full/10.1145/3544548.3580787",
+        pdf: "files/3544548.3580787.pdf"
     },
     {
         type: "conf_intl",
@@ -43,8 +43,8 @@ const papers = [
         title: "Vibration-Augmented Buttons: Information Transmission Capacity and Application to Interaction Design",
         authors: "Chaeyong Park, Jeongwoo Kim, Dong-Geun Kim, Seungjae Oh, and Seungmoon Choi",
         venue: "Proceedings of the ACM CHI Conference on Human Factors in Computing Systems (CHI)",
-        link: "",
-        pdf: ""
+        link: "https://dl.acm.org/doi/abs/10.1145/3491102.3501849",
+        pdf: "files/3491102.3501849.pdf"
     },
     {
         type: "poster_intl",
@@ -53,7 +53,7 @@ const papers = [
         authors: "Dong-Geun Kim, Suheon Nam, Geunho Lee, Chaeyong Park and Seungmoon Choi",
         venue: "IEEE World Haptics Conference",
         link: "",
-        pdf: ""
+        pdf: "files/wipwhc.pdf"
     },
     {
         type: "poster_intl",
@@ -70,8 +70,8 @@ const papers = [
         title: "MMGrip: A Handheld Multimodal Haptic Device Combining Vibration, Impact, and Shear for Realistic Expression of Contact",
         authors: "Dong-Geun Kim, Jungeun Lee, and Seungmoon Choi",
         venue: "Proceedings of SIGGRAPH Asia Posters",
-        link: "",
-        pdf: ""
+        link: "https://dl.acm.org/doi/abs/10.1145/3550082.3564177",
+        pdf: "files/3550082.3564177.pdf"
     },
     {
         type: "conf_dom",
@@ -80,7 +80,7 @@ const papers = [
         authors: "Dong-Geun Kim and Seungmoon Choi",
         venue: "Proceedings of Korea Haptics Conference",
         link: "",
-        pdf: ""
+        pdf: "files/koreaHap.pdf"
     },
     {
         type: "poster_dom",
@@ -90,7 +90,26 @@ const papers = [
         venue: "Spring Conference, The Acoustical Society of Korea",
         link: "",
         pdf: ""
+    },
+    {
+        type: "conf_dom",
+        year: 2024,
+        title: "MMGrip: A Multimodal Haptic Device Combining Vibration, Impact, and Shear for Realistic Haptic Feedback ",
+        authors: "Dong-Geun Kim, Jungeun Lee and Seungmoon Choi",
+        venue: "Korean Institute of Information Scientists and Engineers",
+        link: "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11224329",
+        pdf: "files/MMGRIP_DOMESTIC.pdf"
+    },
+    {
+        type: "conf_dom",
+        year: 2023,
+        title: "음향-촉감 교차 모달 스펙트럼 매칭",
+        authors: "Dong-Geun Kim, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi",
+        venue: "Korean Institute of Next Generation Computing",
+
     }
+
+
 ];
 
 // 2. 탭 기능 및 논문 렌더링 실행
