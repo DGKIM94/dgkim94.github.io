@@ -146,6 +146,7 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPublications();
     renderAwards();      // CV 탭의 Awards
     renderRecentNews();  // About 탭의 Recent News
+    typeWriter();
 });
 
 
@@ -300,3 +301,21 @@ tabs.forEach(tab => {
         setTimeout(observeElements, 100);
     });
 });
+
+
+// [Fancy 기능] 타이핑 효과 함수
+// 수정된 부분: 문구를 "HCI & Haptics Researcher"로 변경
+const textToType = "HCI & Haptics Researcher";
+
+const typingElement = document.querySelector('.typing-text');
+let typeIndex = 0;
+
+function typeWriter() {
+    if (typeIndex < textToType.length) {
+        if(typingElement) {
+            typingElement.innerHTML += textToType.charAt(typeIndex);
+            typeIndex++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+}

@@ -245,3 +245,62 @@ p { margin-bottom: 15px; color: #444; }
     opacity: 1;
     transform: none;
 }
+/* --- Fancy Upgrade --- */
+
+/* 1. 타이핑 커서 깜빡임 */
+.cursor {
+    display: inline-block;
+    width: 3px;
+    background-color: #d32f2f; /* 포스텍 레드 계열 */
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 2. 연구 비전 박스 (인용구) */
+.vision-box {
+    border-left: 4px solid #d32f2f;
+    background: #f9f9f9;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    font-size: 1.1em;
+    color: #555;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+}
+
+/* 3. 테크 스택 아이콘들 */
+.tech-icons {
+    display: flex;
+    gap: 20px;
+    font-size: 2.5rem; /* 아이콘 크기 */
+    margin-bottom: 30px;
+    color: #444;
+}
+
+.tech-icons i {
+    transition: transform 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+/* 아이콘 마우스 올렸을 때 색상 변화 및 점프 */
+.tech-icons i:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+.tech-icons i.fa-python:hover { color: #3776AB; }
+.tech-icons i.fa-unity:hover { color: #000000; }
+.tech-icons i.fa-microchip:hover { color: #00979D; } /* Arduino Color */
+.tech-icons i.fa-cube:hover { color: #F5792A; } /* Fusion 360ish Color */
+.tech-icons i.fa-code:hover { color: #00599C; } /* C++ Color */
+
+/* 4. 이름에 그라데이션 효과 (선택사항: 원하시면 h1.name에 적용) */
+.name {
+    background: linear-gradient(45deg, #2c3e50, #d32f2f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
