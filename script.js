@@ -1,4 +1,4 @@
-// 1. 논문 데이터 관리 (이곳에 최신 논문을 그냥 추가하면 알아서 정렬됩니다)
+// 1. 논문 데이터 관리
 // type: 'journal', 'conf_intl', 'poster_intl', 'conf_dom', 'poster_dom'
 const papers = [
     {
@@ -25,7 +25,6 @@ const papers = [
         title: "A Feasibility Study of Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration",
         authors: "Dong-Geun Kim and Seungmoon Choi",
         venue: "Proceedings of EuroHaptics",
-        // 링크나 PDF가 없으면 비워둬도 됩니다 ("": "" 또는 아예 삭제)
         link: "",
         pdf: ""
     },
@@ -114,9 +113,10 @@ document.addEventListener('DOMContentLoaded', () => {
     renderPublications();
 });
 
-// 3. 논문 렌더링 함수 (자동 정렬 및 번호 매기기)
+// 3. 논문 렌더링 함수
 function renderPublications() {
-    // 카테고리별 설정 (HTML ID 매핑 및 접두사)
+    console.log("Rendering Publications..."); // 디버깅용 로그
+
     const categories = [
         { type: 'journal', id: 'journal-list', prefix: 'J' },
         { type: 'conf_intl', id: 'conf-intl-list', prefix: 'C' },
@@ -127,23 +127,23 @@ function renderPublications() {
 
     categories.forEach(cat => {
         const listElement = document.getElementById(cat.id);
-        if (!listElement) return;
+        if (!listElement) {
+            console.warn(`Element with id ${cat.id} not found.`);
+            return;
+        }
 
-        // 1. 해당 타입 필터링
-        // 2. 연도 내림차순 정렬 (최신순)
         const filteredPapers = papers
             .filter(p => p.type === cat.type)
             .sort((a, b) => b.year - a.year);
 
-        // HTML 생성
         listElement.innerHTML = filteredPapers.map((paper, index) => {
-            // 번호 생성 (예: J1, J2...) -> 최신순이 1번
+            // 최신순이므로 번호는 전체 개수에서 index를 빼거나, 그냥 1부터 매길 수 있음
+            // 여기서는 최신순으로 J1, J2... (index + 1) 사용
             const number = `${cat.prefix}${index + 1}`;
 
-            // 본인 이름 볼드 처리
+            // 이름 볼드 처리
             const highlightedAuthors = paper.authors.replace("Dong-Geun Kim", "<strong>Dong-Geun Kim</strong>");
 
-            // 링크 버튼 생성
             let linksHtml = '';
             if (paper.link) {
                 linksHtml += `<a href="${paper.link}" target="_blank" class="resource-link">[Link]</a>`;
