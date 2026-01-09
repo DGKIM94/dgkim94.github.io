@@ -96,7 +96,7 @@ const papers = [
         year: 2024,
         title: "MMGrip: A Multimodal Haptic Device Combining Vibration, Impact, and Shear for Realistic Haptic Feedback ",
         authors: "Dong-Geun Kim, Jungeun Lee and Seungmoon Choi",
-        venue: "Korean Institute of Information Scientists and Engineers",
+        venue: "Korean Institute of Information Scientists and Engineers (KIISE)",
         link: "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11224329",
         pdf: "files/MMGRIP_DOMESTIC.pdf"
     },
