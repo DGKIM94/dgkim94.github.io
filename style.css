@@ -304,3 +304,35 @@ p { margin-bottom: 15px; color: #444; }
     -webkit-text-fill-color: transparent;
     display: inline-block;
 }
+
+/* --- 사파리(iOS) 호환성 패치 --- */
+
+/* 1. 애니메이션에 -webkit- 접두사 추가 (사파리용) */
+@-webkit-keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* 2. 커서 설정 강화 */
+.cursor {
+    /* 사파리에서 inline-block 높이 계산 오류 방지 */
+    display: inline-block;
+    vertical-align: text-bottom; /* 줄 맞춤 보정 */
+
+    /* 애니메이션 호환성 */
+    -webkit-animation: blink 1s infinite;
+    animation: blink 1s infinite;
+
+    /* iOS 렌더링 최적화 (하드웨어 가속 강제) */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* 3. 타이핑 텍스트 줄바꿈/높이 오류 방지 */
+#about h2 {
+    /* 사파리에서 폰트 로딩 중 높이 0 되는 것 방지 */
+    min-height: 1.5em;
+
+    /* 텍스트 렌더링 방식 최적화 */
+    -webkit-font-smoothing: antialiased;
+}
