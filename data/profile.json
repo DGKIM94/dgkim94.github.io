@@ -70,6 +70,11 @@
   ],
   "awards": [
     {
+      "year": 2026,
+      "title": "Best Paper Award Finalist",
+      "venue": "IEEE Haptics Symposium"
+    },
+    {
       "year": 2024,
       "title": "Best ToH Short Paper Award (Finalist)",
       "venue": "IEEE Haptics Symposium"

@@ -15,3 +15,5 @@
 @media(max-width:760px){.hero-actions{flex-wrap:wrap}.hero-actions .button{font-size:13px;padding:12px 16px;gap:16px}.hero h1{font-size:clamp(60px,17.5vw,76px);letter-spacing:-3px}}
 @font-face{font-family:'NanumGothic';src:url('assets/fonts/NanumGothic-Regular.ttf') format('truetype');font-weight:400 800;font-display:swap;unicode-range:U+1100-11FF,U+3130-318F,U+AC00-D7AF}
 :root{--font:'DM Sans','NanumGothic',Arial,sans-serif;--heading:'Manrope','NanumGothic',Arial,sans-serif}
+
+.award-badge{display:inline-block;align-self:flex-start;background:#eee5ff;color:#553679;border:1px solid #d8c3f3;font-size:11px;line-height:1.6;font-weight:600;padding:4px 9px;border-radius:4px;margin:0 0 20px}.featured-card:first-child .award-badge{background:#4b395d;color:#eddaff;border-color:#6b5180}.award-badge.inline{margin:0 0 0 12px;vertical-align:middle;font-size:10px;padding:2px 7px}.cache-note{display:block;color:#7d622c;max-width:260px;margin-top:4px}@media(max-width:760px){.award-badge.inline{margin:6px 0 2px;display:table}.cache-note{max-width:none}}

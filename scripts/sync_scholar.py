@@ -9,6 +9,7 @@ import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import parse_qs, urlencode, urljoin, urlparse
+from urllib.error import URLError
 from urllib.request import Request, urlopen
 
 from bs4 import BeautifulSoup
@@ -86,11 +87,7 @@ def atomic_save(path, data):
             os.unlink(temp)
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--html", type=Path, help="Import a saved complete Scholar profile page.")
-    parser.add_argument("--allow-removals", action="store_true", help="Accept intentional profile deletions after review.")
-    args = parser.parse_args()
+def sync(args):
     profile = json.loads((ROOT / "data/profile.json").read_text())
     destination = ROOT / "data/scholar.json"
     previous = json.loads(destination.read_text()) if destination.exists() else {}
@@ -124,6 +121,53 @@ def main():
     validate_snapshot(snapshot, previous, args.allow_removals)
     atomic_save(destination, snapshot)
     print(f"Updated {len(articles)} Scholar publications. Complete snapshot saved.")
+
+
+def validate_cache():
+    """Only a readable snapshot belonging to this author can be used as fallback."""
+    profile = json.loads((ROOT / "data/profile.json").read_text())
+    cached = json.loads((ROOT / "data/scholar.json").read_text())
+    if cached.get("source") != "Google Scholar" or cached.get("profile_id") != profile["scholar_id"]:
+        raise ValueError("Saved snapshot does not belong to the configured Scholar profile.")
+    datetime.fromisoformat(cached["last_successful_sync"])
+    validate_snapshot(cached, {})
+    for paper in cached["articles"]:
+        if not paper["id"].startswith(profile["scholar_id"] + ":") or not isinstance(paper["venue"], str):
+            raise ValueError("Invalid publication in the saved snapshot.")
+    if not isinstance(cached["metrics"], dict):
+        raise ValueError("Invalid cached metrics.")
+    return cached
+
+
+def record_status(status):
+    cached = validate_cache()
+    atomic_save(ROOT / "data/scholar-sync-status.json", {
+        "status": status,
+        "last_attempt": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "last_successful_sync": cached["last_successful_sync"],
+    })
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+            output.write(f"status={status}\n")
+
+
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--html", type=Path, help="Import a saved complete Scholar profile page.")
+    parser.add_argument("--allow-removals", action="store_true", help="Accept intentional profile deletions after review.")
+    parser.add_argument("--github-actions", action="store_true", help="Continue with a validated cache on a source-access failure.")
+    args = parser.parse_args(argv)
+    try:
+        sync(args)
+    except (URLError, TimeoutError, ValueError) as error:
+        if not args.github_actions:
+            raise
+        # Invalid or missing cache raises here: a genuinely unusable build must still fail.
+        record_status("cached")
+        message = str(error).replace("%", "%25").replace("\r", "%0D").replace("\n", "%0A")
+        print(f"::warning title=Scholar refresh unavailable::{message}. Using the last successful snapshot; deployment can continue.")
+        return
+    record_status("updated")
 
 
 if __name__ == "__main__":

@@ -17,11 +17,11 @@
 6. **Actions → Update Scholar and deploy CV → Run workflow**를 누릅니다. 기본 브랜치는 이 저장소의 `main`입니다.
 7. 완료 후 기존 홈페이지 주소를 새로고침합니다. 첫 실행이 Pages 설정 전에 시작되어 실패했다면 설정 후 다시 실행하면 됩니다.
 
-자동으로 올리는 외부 서비스 가입, API 키, 결제는 필요 없습니다. 이 전달본 자체는 아직 원격 저장소에 반영되지 않았습니다.
+외부 서비스 가입, API 키, 결제는 필요 없습니다. 이번 수정본은 아직 원격 저장소에 반영되지 않았습니다.
 
 ## 자동 갱신 동작
 
-- 매주 **월요일 오전 7:23 (한국시간)**, `main` 변경 시, 또는 수동 실행 시 Scholar를 확인합니다. 예약 실행은 GitHub 사정에 따라 지연될 수 있습니다.
+- 매주 **월요일 오전 7:23 (한국시간)** 또는 수동 실행 시 Scholar를 확인합니다. 일반 파일 업로드(push)에서는 저장된 데이터로 바로 배포하며 Scholar에 접속하지 않습니다. 예약 실행은 GitHub 사정에 따라 지연될 수 있습니다.
 - Scholar ID: `XD8q7lsAAAAJ` — 기존 홈페이지에 링크된 본인 프로필입니다.
 - 제목, 저자 약식 표기, 학술지/학회, 연도, 인용 수를 Scholar에서 가져옵니다.
 - 기존 자료로 확인된 저자의 전체 이름, PDF 링크, 논문 분류는 보조 데이터로 유지합니다. 새 논문은 Scholar 저자 표기로 먼저 반영됩니다.
@@ -31,9 +31,9 @@
 
 ## Scholar 접근이 실패하는 경우
 
-Google Scholar의 공개 HTML을 읽는 방식입니다. **공식 API 연동이 아니므로 Google의 자동 접근 차단이나 페이지 구조 변경에 의해 실패할 수 있습니다. GitHub 실행 환경에서의 접근 성공은 아직 검증되지 않았습니다.**
+Google Scholar의 공개 HTML을 읽는 방식입니다. **공식 API 연동이 아니므로 Google의 자동 접근 차단이나 페이지 구조 변경에 의해 실패할 수 있습니다. 2026-10-02 GitHub 실행에서는 Scholar 갱신이 실패했습니다. 배포 단계 자체는 성공했으며, 기존 코드의 마지막 강제 실패 단계가 전체 작업을 실패 처리한 것이 확인되었습니다.**
 
-실패 시 기존 데이터를 지우지 않으며, 마지막 성공한 논문 목록으로 홈페이지와 CV를 유지합니다. 성공 날짜는 사이트에 표시됩니다. 21일 이상 경과하면 방문자에게 최신 논문이 Scholar에 있을 수 있다는 안내를 표시합니다. Actions 실행은 실패 표시와 요약을 남기므로 이메일 등 원하는 알림을 GitHub에서 설정할 수 있습니다.
+Scholar 접근 실패 시 기존 데이터를 검증해 그대로 사용합니다. 정상 데이터가 있으면 경고와 실행 요약을 남기고 홈페이지 배포를 계속합니다. 마지막 확인 날짜를 최신 날짜로 조작하지 않습니다. 사이트에는 `Latest refresh unavailable · showing saved data`를 표시합니다. 저장 데이터도 없거나 손상되었거나, 빌드·배포 자체가 실패하면 작업은 여전히 실패합니다. 이 수정은 Google의 접근 제한 자체를 해제하는 것은 아닙니다.
 
 정상 응답이 비어 있거나, 페이지 목록이 불완전하거나, 이전 논문이 사라지면 자동 덮어쓰기를 거부합니다. 본인이 Scholar에서 논문을 의도적으로 삭제·통합한 경우에만 Run workflow의 `allow_removals`를 체크하세요.
 
@@ -52,7 +52,8 @@ GitHub는 활동이 없는 공개 저장소의 예약 작업을 60일 후 비활
 | --- | --- |
 | `data/profile.json` | 소개, 학력, 프로젝트, 경력, 수상, 연락처 |
 | `data/scholar.json` | 마지막 정상 Scholar 응답; 자동 생성 |
-| `data/publication-overrides.json` | Scholar 논문 ID별 전체 저자명, PDF, 분류, 대표 논문 여부 |
+| `data/scholar-sync-status.json` | 최근 갱신 결과와 마지막 정상 갱신 시점 |
+| `data/publication-overrides.json` | Scholar 논문 ID별 전체 저자명, PDF, 분류, 대표 논문 여부, 수상 표시 |
 | `data/additional-publications.json` | Scholar에 없는 추가 발표 |
 | `templates/index.html` | 홈페이지 구조 |
 | `style.css` | 색상, 레이아웃, 모바일 디자인 |
@@ -65,6 +66,7 @@ GitHub는 활동이 없는 공개 저장소의 예약 작업을 60일 후 비활
 
 2026-10-02 확인: Scholar 8편, 기존 사이트에서만 확인된 발표 5건. 인용 수 85, h-index 4. 인용 지표는 Scholar 집계이며 추가 발표 수와 혼합하지 않습니다.
 
+- 2026년 IEEE Haptics Symposium **Best Paper Award Finalist**를 논문 카드·목록, 수상 경력, PDF CV에 반영했습니다. 수상 정보는 본인 확인을 기준으로 보존하므로 Scholar 갱신 후에도 유지됩니다.
 - 새로 확인된 2026년 논문: *Effects of Spatiotemporal Parameters on Forearm Vibrotactile Stimulus Identification*.
 - *Sound-to-touch crossmodal pitch matching for short sounds*: 기존 사이트의 2024년 대신 Scholar의 2023년 사용.
 - 국내 MMGrip 발표: 기존 사이트의 2024년/영문 제목 대신 Scholar의 2022년/한글 제목 사용.

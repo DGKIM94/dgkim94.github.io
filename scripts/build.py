@@ -57,7 +57,7 @@ def publications(snapshot, overrides, additional):
         paper = dict(article)
         extra = overrides.get(paper["id"], {})
         # Scholar owns the title, publication year, venue, abbreviated authors, and citation count.
-        for key in ("type", "pdf", "publisher_url", "full_authors", "featured", "venue_label"):
+        for key in ("type", "pdf", "publisher_url", "full_authors", "featured", "venue_label", "award"):
             if key in extra:
                 paper[key] = extra[key]
         paper["source"] = "Google Scholar"
@@ -125,8 +125,11 @@ def pdf_cv(profile, papers, sync_date, destination):
         title = f'<b>{label}</b>'
         if link:
             title = f'<link href="{html.escape(link,quote=True)}" color="#202032">{title}</link>'
-        return KeepTogether([para(title), para(clean(p["display_authors"]), "CVSmall"),
-                             para(clean(f'{p["venue"]} · {p.get("year") or "Year not listed"}'), "CVSmall"), Spacer(1, 5)])
+        contents = [para(title), para(clean(p["display_authors"]), "CVSmall"),
+                    para(clean(f'{p["venue"]} · {p.get("year") or "Year not listed"}'), "CVSmall")]
+        if p.get("award"):
+            contents.append(para(f'<font color="#5842c3"><b>{clean(p["award"])}</b></font>', "CVSmall"))
+        return KeepTogether(contents + [Spacer(1, 5)])
     for i, p in enumerate(indexed, 1):
         story.append(pub(p, i))
     if additional:
@@ -154,12 +157,14 @@ def pdf_cv(profile, papers, sync_date, destination):
     destination.parent.mkdir(parents=True, exist_ok=True)
     document = SimpleDocTemplate(str(destination), pagesize=A4, rightMargin=19*mm, leftMargin=19*mm,
                                  topMargin=18*mm, bottomMargin=22*mm,
-                                 title="Dong-Geun Kim - Curriculum Vitae", author=profile["name"])
+                                 title="Dong-Geun Kim - Curriculum Vitae", author=profile["name"], invariant=1)
     document.build(story, onFirstPage=footer, onLaterPages=footer)
 
 
 def main():
     profile, snapshot = load("profile.json"), load("scholar.json")
+    status_path = ROOT / "data/scholar-sync-status.json"
+    sync_status = load("scholar-sync-status.json") if status_path.exists() else {}
     papers = publications(snapshot, load("publication-overrides.json"), load("additional-publications.json"))
     date = snapshot["last_successful_sync"][:10]
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
@@ -168,7 +173,7 @@ def main():
                    additional=[p for p in papers if p["source"] != "Google Scholar"],
                    featured=[p for p in indexed if p.get("featured")][:3],
                    years=sorted({p["year"] for p in indexed if p.get("year")}, reverse=True),
-                   metrics=snapshot["metrics"], sync_date=date, types=TYPES)
+                   metrics=snapshot["metrics"], sync_date=date, types=TYPES, sync_status=sync_status)
     (ROOT / "index.html").write_text(env.get_template("index.html").render(**context), encoding="utf-8")
     (ROOT / "data/publications.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
     pdf_cv(profile, papers, date, ROOT / "files/DongGeunKim_CV.pdf")

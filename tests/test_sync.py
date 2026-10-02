@@ -55,5 +55,57 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(canonical['title'],'Scholar title')
         self.assertEqual(len(items),2)
 
+
+class ActionFallbackTests(unittest.TestCase):
+    def prepare(self, root):
+        (root/'data').mkdir()
+        profile={'name':'Dong-Geun Kim','scholar_id':'XD8q7lsAAAAJ','scholar_url':'https://scholar.google.com/citations?user=XD8q7lsAAAAJ'}
+        article={'id':'XD8q7lsAAAAJ:one','title':'Existing paper','authors':'DG Kim','venue':'Journal','year':2026}
+        snapshot={'source':'Google Scholar','profile_id':profile['scholar_id'],'profile_url':profile['scholar_url'],'last_successful_sync':'2026-10-02T06:00:00+00:00','metrics':{'citations':85},'articles':[article]}
+        (root/'data/profile.json').write_text(json.dumps(profile))
+        (root/'data/scholar.json').write_text(json.dumps(snapshot))
+    def test_blocked_request_keeps_cache_and_succeeds_with_warning(self):
+        from unittest.mock import patch
+        from urllib.error import HTTPError
+        from contextlib import redirect_stdout
+        from io import StringIO
+        import sync_scholar
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);self.prepare(root)
+            snapshot=root/'data/scholar.json';before=snapshot.read_bytes()
+            output=StringIO()
+            with patch.object(sync_scholar,'ROOT',root),patch.object(sync_scholar,'urlopen',side_effect=HTTPError('https://scholar.google.com',403,'Forbidden',{},None)),patch.dict('os.environ',{'GITHUB_OUTPUT':str(root/'action-output')}),redirect_stdout(output):
+                sync_scholar.main(['--github-actions'])
+            self.assertEqual(snapshot.read_bytes(),before)
+            status=json.loads((root/'data/scholar-sync-status.json').read_text())
+            self.assertEqual(status['status'],'cached')
+            self.assertEqual(status['last_successful_sync'],'2026-10-02T06:00:00+00:00')
+            self.assertIn('::warning',output.getvalue())
+            self.assertEqual((root/'action-output').read_text(),'status=cached\n')
+    def test_unusable_cache_still_fails(self):
+        from unittest.mock import patch
+        from urllib.error import URLError
+        import sync_scholar
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);self.prepare(root)
+            (root/'data/scholar.json').write_text('{}')
+            with patch.object(sync_scholar,'ROOT',root),patch.object(sync_scholar,'urlopen',side_effect=URLError('blocked')):
+                with self.assertRaises(ValueError):sync_scholar.main(['--github-actions'])
+            self.assertFalse((root/'data/scholar-sync-status.json').exists())
+    def test_successful_sync_clears_cached_status(self):
+        from unittest.mock import patch
+        import sync_scholar
+        with tempfile.TemporaryDirectory() as folder:
+            root=Path(folder);self.prepare(root)
+            saved=root/'profile.html';saved.write_text(PAGE)
+            with patch.object(sync_scholar,'ROOT',root),patch.dict('os.environ',{'GITHUB_OUTPUT':str(root/'action-output')}):
+                sync_scholar.main(['--github-actions','--html',str(saved)])
+            self.assertEqual(json.loads((root/'data/scholar-sync-status.json').read_text())['status'],'updated')
+            self.assertEqual(json.loads((root/'data/scholar.json').read_text())['articles'][0]['title'],'A & B')
+    def test_award_survives_scholar_regeneration(self):
+        article={'id':'a','title':'A paper','authors':'DG Kim','venue':'Haptics','year':2026}
+        result=publications({'articles':[article]},{'a':{'award':'Best Paper Award Finalist','type':'conf_intl'}},[])
+        self.assertEqual(result[0]['award'],'Best Paper Award Finalist')
+
 if __name__ == '__main__':
     unittest.main()

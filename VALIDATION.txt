@@ -1,11 +1,11 @@
-Validation completed 2026-10-02
+Validated 2026-10-02: Scholar fallback fix + 2026 Best Paper Award Finalist.
 
-PASS: live Google Scholar refresh, 8 indexed publications.
-PASS: 6 update safeguards and metadata precedence tests.
-PASS: browser review at widths 320, 390, 768, 1440 pixels; no horizontal overflow.
-PASS: text search, year/type filters, empty results, additional records.
-PASS: local PDF links, no JavaScript errors, publications visible without JavaScript.
-PASS: 3-page PDF visual review; embedded Latin/Korean fonts.
+Confirmed from public GitHub Actions run 36980791882: Deploy the website succeeded; Surface a failed refresh for notification failed. Detailed source-fetch logs require authorization and were not retrieved.
 
-GitHub Actions deployment and scheduled runs were NOT executed in the user repository.
-See README.md for first-time upload and activation.
+PASS: 10 regression tests, including blocked Scholar response with unchanged cached data; invalid cache still fails; successful refresh clears cached status; award survives regeneration.
+PASS: YAML parsing and source/deployment outcome checks.
+PASS: responsive browser at 320, 390, 768, 1440 px; publication filters; award badges; explicit saved-data status; no horizontal overflow or JS errors.
+PASS: all publication/PDF links and no-JavaScript content.
+PASS: 3-page PDF visual review; 2026 finalist listed in Awards and on the paper.
+
+Fixed files have NOT been pushed or deployed to the user repository. Google Scholar may still decline requests from GitHub runners; the fallback is reported honestly.

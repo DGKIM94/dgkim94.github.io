@@ -8,6 +8,10 @@ on:
     - cron: '23 22 * * 0'
   workflow_dispatch:
     inputs:
+      refresh_scholar:
+        description: 'Try to refresh Scholar (turn off to deploy saved data only)'
+        type: boolean
+        default: true
       allow_removals:
         description: 'Allow intentional Scholar removals after checking the profile'
         type: boolean
@@ -23,7 +27,7 @@ permissions:
 jobs:
   build-and-deploy:
     if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 12
     permissions:
       contents: write
@@ -46,14 +50,14 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Refresh the Scholar snapshot
         id: scholar
-        continue-on-error: true
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.refresh_scholar)
         env:
           ALLOW_REMOVALS: ${{ inputs.allow_removals }}
         run: |
           if [ "$ALLOW_REMOVALS" = "true" ]; then
-            python scripts/sync_scholar.py --allow-removals
+            python scripts/sync_scholar.py --github-actions --allow-removals
           else
-            python scripts/sync_scholar.py
+            python scripts/sync_scholar.py --github-actions
           fi
       - name: Build the website and PDF CV
         run: python scripts/build.py
@@ -61,21 +65,23 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/scholar.json data/publications.json index.html files/DongGeunKim_CV.pdf
+          git add data/scholar.json data/scholar-sync-status.json data/publications.json index.html files/DongGeunKim_CV.pdf
           if ! git diff --cached --quiet; then
             git commit -m 'Update Scholar publications and CV'
             git push origin HEAD:main
           fi
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v4
+      - uses: actions/configure-pages@v6.0.0
+      - uses: actions/upload-pages-artifact@v5.0.0
         with:
           path: _site
+          include-hidden-files: true
       - name: Deploy the website
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5.0.1
       - name: Report results
         if: always()
         env:
+          SCHOLAR_STATUS: ${{ steps.scholar.outputs.status }}
           SCHOLAR_OUTCOME: ${{ steps.scholar.outcome }}
           PAGE_URL: ${{ steps.deployment.outputs.page_url }}
         run: |
@@ -84,17 +90,14 @@ jobs:
           from pathlib import Path
           snapshot = json.loads(Path('data/scholar.json').read_text())
           lines = ['## CV update',
-                   '- Scholar result: ' + os.environ['SCHOLAR_OUTCOME'],
+                   '- Scholar result: ' + (os.environ['SCHOLAR_STATUS'] or os.environ['SCHOLAR_OUTCOME']),
                    '- Last successful sync: ' + snapshot['last_successful_sync'],
                    '- Scholar publications: ' + str(len(snapshot['articles'])),
                    '- Website: ' + os.environ['PAGE_URL']]
-          if os.environ['SCHOLAR_OUTCOME'] == 'failure':
-              lines.append('- Scholar could not be refreshed. The previous snapshot was preserved.')
+          if os.environ['SCHOLAR_STATUS'] == 'cached':
+              lines.append('- Scholar was unavailable. The previous snapshot was preserved; this is not a successful data refresh.')
+          elif os.environ['SCHOLAR_OUTCOME'] == 'skipped':
+              lines.append('- Scholar refresh was not requested. This deployment uses saved data.')
           with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
               f.write('\n'.join(lines) + '\n')
           PY
-      - name: Surface a failed refresh for notification
-        if: steps.scholar.outcome == 'failure'
-        run: |
-          echo '::error::Scholar refresh failed. The website uses the last successful snapshot; see the run summary.'
-          exit 1
