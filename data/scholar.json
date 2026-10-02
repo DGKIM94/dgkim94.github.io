@@ -1,0 +1,85 @@
+{
+  "source": "Google Scholar",
+  "profile_id": "XD8q7lsAAAAJ",
+  "profile_url": "https://scholar.google.com/citations?user=XD8q7lsAAAAJ&hl=en",
+  "last_successful_sync": "2026-10-02T06:28:05+00:00",
+  "metrics": {
+    "citations": 85,
+    "h_index": 4,
+    "i10_index": 3
+  },
+  "articles": [
+    {
+      "id": "XD8q7lsAAAAJ:IjCSPb-OGe4C",
+      "title": "MMGrip: A Handheld Multimodal Haptic Device Combining Vibration, Impact, and Shear for Realistic Expression of Contact",
+      "authors": "DG Kim, J Lee, S Choi",
+      "venue": "SIGGRAPH Asia 2022 Posters, 1-2",
+      "year": 2022,
+      "citations": 4,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:IjCSPb-OGe4C"
+    },
+    {
+      "id": "XD8q7lsAAAAJ:W7OEmFMy1HYC",
+      "title": "Generating real-time, selective, and multimodal haptic effects from sound for gaming experience enhancement",
+      "authors": "G Yun, M Mun, J Lee, DG Kim, HZ Tan, S Choi",
+      "venue": "Proceedings of the 2023 CHI Conference on Human Factors in Computing Systems …",
+      "year": 2023,
+      "citations": 44,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:W7OEmFMy1HYC"
+    },
+    {
+      "id": "XD8q7lsAAAAJ:WF5omc3nYNoC",
+      "title": "Effects of Spatiotemporal Parameters on Forearm Vibrotactile Stimulus Identification",
+      "authors": "DG Kim, G Lee, S Nam, C Park, S Choi",
+      "venue": "2026 IEEE Haptics Symposium (HAPTICS), 1-13",
+      "year": 2026,
+      "citations": null,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:WF5omc3nYNoC"
+    },
+    {
+      "id": "XD8q7lsAAAAJ:Y0pCki6q_DkC",
+      "title": "A feasibility study on tactile enhancement of mid-air ultrasonic stimulation by wrist vibration",
+      "authors": "DG Kim, S Choi",
+      "venue": "International Conference on Human Haptic Sensing and Touch Enabled Computer …",
+      "year": 2024,
+      "citations": 1,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:Y0pCki6q_DkC"
+    },
+    {
+      "id": "XD8q7lsAAAAJ:YsMSGLbcyi4C",
+      "title": "MMGrip: 사실적인 햅틱 표현을 위한 진동, 임팩트, 전단력 기반 다중촉감 햅틱 장치",
+      "authors": "김동근， 이정은， 최승문",
+      "venue": "한국정보과학회 학술발표논문집, 1038-1040",
+      "year": 2022,
+      "citations": null,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:YsMSGLbcyi4C"
+    },
+    {
+      "id": "XD8q7lsAAAAJ:eQOLeE2rZwMC",
+      "title": "Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration: Perceived Intensity and Pattern Recognition",
+      "authors": "DG Kim, S Choi",
+      "venue": "IEEE Transactions on Haptics 18 (3), 603-614",
+      "year": 2025,
+      "citations": null,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:eQOLeE2rZwMC"
+    },
+    {
+      "id": "XD8q7lsAAAAJ:u5HHmVD_uO8C",
+      "title": "Vibration-augmented buttons: Information transmission capacity and application to interaction design",
+      "authors": "C Park, J Kim, DG Kim, S Oh, S Choi",
+      "venue": "Proceedings of the 2022 CHI Conference on Human Factors in Computing Systems …",
+      "year": 2022,
+      "citations": 18,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:u5HHmVD_uO8C"
+    },
+    {
+      "id": "XD8q7lsAAAAJ:zYLM7Y9cAGgC",
+      "title": "Sound-to-touch crossmodal pitch matching for short sounds",
+      "authors": "DG Kim, J Lee, G Yun, HZ Tan, S Choi",
+      "venue": "IEEE Transactions on Haptics 17 (1), 2-7",
+      "year": 2023,
+      "citations": 18,
+      "scholar_url": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:zYLM7Y9cAGgC"
+    }
+  ]
+}

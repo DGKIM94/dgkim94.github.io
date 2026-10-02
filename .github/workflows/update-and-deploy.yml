@@ -1,0 +1,100 @@
+name: Update Scholar and deploy CV
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    # Every Monday, 07:23 KST (Sunday 22:23 UTC).
+    - cron: '23 22 * * 0'
+  workflow_dispatch:
+    inputs:
+      allow_removals:
+        description: 'Allow intentional Scholar removals after checking the profile'
+        type: boolean
+        default: false
+
+concurrency:
+  group: cv-pages
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-deploy:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test update safeguards
+        run: python -m unittest discover -s tests -v
+      - name: Refresh the Scholar snapshot
+        id: scholar
+        continue-on-error: true
+        env:
+          ALLOW_REMOVALS: ${{ inputs.allow_removals }}
+        run: |
+          if [ "$ALLOW_REMOVALS" = "true" ]; then
+            python scripts/sync_scholar.py --allow-removals
+          else
+            python scripts/sync_scholar.py
+          fi
+      - name: Build the website and PDF CV
+        run: python scripts/build.py
+      - name: Save the successful snapshot and generated CV
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/scholar.json data/publications.json index.html files/DongGeunKim_CV.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m 'Update Scholar publications and CV'
+            git push origin HEAD:main
+          fi
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+      - name: Deploy the website
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Report results
+        if: always()
+        env:
+          SCHOLAR_OUTCOME: ${{ steps.scholar.outcome }}
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from pathlib import Path
+          snapshot = json.loads(Path('data/scholar.json').read_text())
+          lines = ['## CV update',
+                   '- Scholar result: ' + os.environ['SCHOLAR_OUTCOME'],
+                   '- Last successful sync: ' + snapshot['last_successful_sync'],
+                   '- Scholar publications: ' + str(len(snapshot['articles'])),
+                   '- Website: ' + os.environ['PAGE_URL']]
+          if os.environ['SCHOLAR_OUTCOME'] == 'failure':
+              lines.append('- Scholar could not be refreshed. The previous snapshot was preserved.')
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+              f.write('\n'.join(lines) + '\n')
+          PY
+      - name: Surface a failed refresh for notification
+        if: steps.scholar.outcome == 'failure'
+        run: |
+          echo '::error::Scholar refresh failed. The website uses the last successful snapshot; see the run summary.'
+          exit 1

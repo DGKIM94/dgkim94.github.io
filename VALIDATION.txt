@@ -1,0 +1,11 @@
+Validation completed 2026-10-02
+
+PASS: live Google Scholar refresh, 8 indexed publications.
+PASS: 6 update safeguards and metadata precedence tests.
+PASS: browser review at widths 320, 390, 768, 1440 pixels; no horizontal overflow.
+PASS: text search, year/type filters, empty results, additional records.
+PASS: local PDF links, no JavaScript errors, publications visible without JavaScript.
+PASS: 3-page PDF visual review; embedded Latin/Korean fonts.
+
+GitHub Actions deployment and scheduled runs were NOT executed in the user repository.
+See README.md for first-time upload and activation.

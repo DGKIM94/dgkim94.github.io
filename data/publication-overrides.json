@@ -1,0 +1,65 @@
+{
+  "XD8q7lsAAAAJ:eQOLeE2rZwMC": {
+    "type": "journal",
+    "pdf": "files/J_Enhancement.pdf",
+    "publisher_url": "https://ieeexplore.ieee.org/document/11045208",
+    "full_authors": "Dong-Geun Kim, Seungmoon Choi",
+    "featured": true,
+    "venue_label": "IEEE ToH"
+  },
+  "XD8q7lsAAAAJ:zYLM7Y9cAGgC": {
+    "type": "journal",
+    "pdf": "files/Crossmodal.pdf",
+    "publisher_url": "https://ieeexplore.ieee.org/document/10337769",
+    "full_authors": "Dong-Geun Kim, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi",
+    "featured": true,
+    "venue_label": "IEEE ToH"
+  },
+  "XD8q7lsAAAAJ:Y0pCki6q_DkC": {
+    "type": "conf_intl",
+    "pdf": "files/1071-doc.pdf",
+    "publisher_url": "https://dl.acm.org/doi/10.1007/978-3-031-70061-3_1",
+    "full_authors": "Dong-Geun Kim and Seungmoon Choi",
+    "featured": false,
+    "venue_label": "EuroHaptics"
+  },
+  "XD8q7lsAAAAJ:W7OEmFMy1HYC": {
+    "type": "conf_intl",
+    "pdf": "files/3544548.3580787.pdf",
+    "publisher_url": "https://dl.acm.org/doi/full/10.1145/3544548.3580787",
+    "full_authors": "Gyeore Yun, Minjae Mun, Jungeun Lee, Dong-Geun Kim, Hong Z Tan, and Seungmoon Choi",
+    "featured": false,
+    "venue_label": "ACM CHI"
+  },
+  "XD8q7lsAAAAJ:u5HHmVD_uO8C": {
+    "type": "conf_intl",
+    "pdf": "files/3491102.3501849.pdf",
+    "publisher_url": "https://dl.acm.org/doi/abs/10.1145/3491102.3501849",
+    "full_authors": "Chaeyong Park, Jeongwoo Kim, Dong-Geun Kim, Seungjae Oh, and Seungmoon Choi",
+    "featured": false,
+    "venue_label": "ACM CHI"
+  },
+  "XD8q7lsAAAAJ:IjCSPb-OGe4C": {
+    "type": "poster_intl",
+    "pdf": "files/3550082.3564177.pdf",
+    "publisher_url": "https://dl.acm.org/doi/abs/10.1145/3550082.3564177",
+    "full_authors": "Dong-Geun Kim, Jungeun Lee, and Seungmoon Choi",
+    "featured": false,
+    "venue_label": "SIGGRAPH Asia"
+  },
+  "XD8q7lsAAAAJ:YsMSGLbcyi4C": {
+    "type": "conf_dom",
+    "pdf": "files/MMGRIP_DOMESTIC.pdf",
+    "publisher_url": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11224329",
+    "full_authors": "Dong-Geun Kim, Jungeun Lee and Seungmoon Choi",
+    "featured": false,
+    "venue_label": "KIISE"
+  },
+  "XD8q7lsAAAAJ:WF5omc3nYNoC": {
+    "type": "conf_intl",
+    "full_authors": "Dong-Geun Kim, Geunho Lee, Suheon Nam, Chaeyong Park, Seungmoon Choi",
+    "publisher_url": "https://ieeexplore.ieee.org/abstract/document/11495459/",
+    "featured": true,
+    "venue_label": "IEEE Haptics"
+  }
+}

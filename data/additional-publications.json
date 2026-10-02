@@ -1,0 +1,57 @@
+[
+  {
+    "type": "poster_intl",
+    "year": 2025,
+    "title": "Tactile Localization in Forearm-Mounted Multi-Tactor Displays: The Effect of Tactor Number and Position",
+    "authors": "Dong-Geun Kim, Suheon Nam, Geunho Lee, Chaeyong Park and Seungmoon Choi",
+    "venue": "IEEE World Haptics Conference",
+    "pdf": "files/wipwhc.pdf",
+    "id": "additional-5",
+    "source": "Existing website",
+    "publisher_url": ""
+  },
+  {
+    "type": "poster_intl",
+    "year": 2023,
+    "title": "Real-Time, Selective, and Multimodal Haptic Feedback from Gameplay Sound",
+    "authors": "Gyeore Yun, Jungeun Lee, Dong-Geun Kim, Minjae Mun, Hong Z. Tan, and Seungmoon Choi",
+    "venue": "IEEE World Haptics Conference",
+    "pdf": "",
+    "id": "additional-6",
+    "source": "Existing website",
+    "publisher_url": ""
+  },
+  {
+    "type": "conf_dom",
+    "year": 2024,
+    "title": "A Feasibility Study of Tactile Enhancement of Mid-Air Ultrasonic Stimulation by Wrist Vibration",
+    "authors": "Dong-Geun Kim and Seungmoon Choi",
+    "venue": "Proceedings of Korea Haptics Conference",
+    "pdf": "files/koreaHap.pdf",
+    "id": "additional-8",
+    "source": "Existing website",
+    "publisher_url": ""
+  },
+  {
+    "type": "poster_dom",
+    "year": 2024,
+    "title": "Investigating the Luxuriousness of Haptic Warning on the Steering Wheel",
+    "authors": "Jeongwoo Kim, Jungeun Lee, Dong-Geun Kim, Ki-Min Kwon, Beomyoung Chung, Junseong Park, Taeuk Kang, Sangji Moon, Wonseok Leee, Sung H. Han, and Seungmoon Choi",
+    "venue": "Spring Conference, The Acoustical Society of Korea",
+    "pdf": "",
+    "id": "additional-9",
+    "source": "Existing website",
+    "publisher_url": ""
+  },
+  {
+    "type": "conf_dom",
+    "year": 2023,
+    "title": "음향-촉감 교차 모달 스펙트럼 매칭",
+    "authors": "Dong-Geun Kim, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi",
+    "venue": "Korean Institute of Next Generation Computing",
+    "pdf": "",
+    "id": "additional-11",
+    "source": "Existing website",
+    "publisher_url": ""
+  }
+]

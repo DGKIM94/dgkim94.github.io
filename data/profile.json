@@ -1,0 +1,115 @@
+{
+  "name": "Dong-Geun Kim",
+  "name_ko": "김동근",
+  "role": "Ph.D. Candidate",
+  "affiliation": "POSTECH Interaction Lab",
+  "email": "dgkim94@postech.ac.kr",
+  "site_url": "https://dgkim94.github.io",
+  "scholar_id": "XD8q7lsAAAAJ",
+  "scholar_url": "https://scholar.google.com/citations?user=XD8q7lsAAAAJ&hl=en",
+  "github_url": "https://github.com/DGKIM94",
+  "linkedin_url": "https://www.linkedin.com/in/dong-geun-kim-61609b315",
+  "instagram_url": "https://instagram.com/dg_kim331",
+  "lab_url": "http://interaction.postech.ac.kr",
+  "bio": "I am a Ph.D. candidate at POSTECH Interaction Lab. I study how touch can deliver information, shape perception, and create new ways to interact. My current work explores a tactile Korean system for people with sensory impairments.",
+  "research": [
+    {
+      "name": "Tactile communication",
+      "description": "Encoding language and information into patterns that can be felt on the skin.",
+      "tag": "LANGUAGE & TOUCH"
+    },
+    {
+      "name": "Vibrotactile perception",
+      "description": "Understanding how the timing and location of vibration shape what we perceive.",
+      "tag": "HUMAN PERCEPTION"
+    },
+    {
+      "name": "Mid-air haptics",
+      "description": "Exploring contactless touch and how wrist vibration enhances ultrasonic sensations.",
+      "tag": "HAPTIC INTERFACES"
+    }
+  ],
+  "education": [
+    {
+      "period": "2020 – Present",
+      "institution": "Pohang University of Science and Technology (POSTECH)",
+      "degree": "Integrated M.S./Ph.D. in IT Convergence Engineering"
+    },
+    {
+      "period": "2014 – 2019",
+      "institution": "Ulsan National Institute of Science and Technology (UNIST)",
+      "degree": "B.S. in Mechanical Engineering"
+    }
+  ],
+  "experience": [
+    {
+      "period": "Sep. 2019 – May 2020",
+      "institution": "POSTECH Kim Lab",
+      "role": "Research Assistant",
+      "description": "Developed high-frequency ultrasound transducers for tactile applications."
+    }
+  ],
+  "skills": {
+    "Programming": [
+      "Python",
+      "Unity (C#)",
+      "MATLAB",
+      "C/C++"
+    ],
+    "Hardware & research": [
+      "Arduino / Embedded",
+      "Fusion 360 (CAD)",
+      "3D Printing",
+      "Signal Processing",
+      "User Study Design"
+    ]
+  },
+  "languages": [
+    "Korean (Native)",
+    "English (Fluent) · TOEIC 920 / TEPS 379"
+  ],
+  "awards": [
+    {
+      "year": 2024,
+      "title": "Best ToH Short Paper Award (Finalist)",
+      "venue": "IEEE Haptics Symposium"
+    },
+    {
+      "year": 2022,
+      "title": "Best Paper Award",
+      "venue": "KSC (KIISE)"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Tactile Korean System for the Visually and Hearing Impaired (PM)",
+      "period": "IITP | Jan. 2025 – Present",
+      "description": "Conducting research on tactile delivery of Korean language using vibrotactile arrays to support communication for people with sensory disabilities.",
+      "link": ""
+    },
+    {
+      "name": "Mid-air Haptic Rendering for Digital Twin (PM)",
+      "period": "IITP | Jan. 2023 – Dec. 2024",
+      "description": "Leading the development of real-time mid-air haptic rendering technologies. Researched enhancing perceived intensity of weak stimuli using cognitive modulation.",
+      "link": "https://link.springer.com/chapter/10.1007/978-3-031-70061-3_1"
+    },
+    {
+      "name": "Investigating the Luxuriousness of Haptic Warning",
+      "period": "Hyundai Motors | Apr. 2023 - Apr. 2024",
+      "description": "Explored user perception of luxurious haptic warning feedback on steering wheels.",
+      "link": ""
+    },
+    {
+      "name": "Performance Metric for User Experience",
+      "period": "Google | Sep. 2021 – Jul. 2023",
+      "description": "Designed metrics to assess UX in digital environments. Improved UX through cross-modal matching of sound and touch.",
+      "link": "https://ieeexplore.ieee.org/abstract/document/10337769"
+    },
+    {
+      "name": "Multimodal Haptic Tool for AR Sports",
+      "period": "KOCCA | Jun. 2020 – Dec. 2022",
+      "description": "Designed devices rendering realistic haptic sensations by combining vibration, shear force, and impact feedback.",
+      "link": "https://dl.acm.org/doi/abs/10.1145/3550082.3564177"
+    }
+  ]
+}
