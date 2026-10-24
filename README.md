@@ -66,7 +66,7 @@ Scholar에 아직 없는 게재 확정 논문은 `data/additional-publications.j
 
 ## 이번 반영 기준
 
-2026-10-24: Nature Communications 게재 확정 논문 *Synchronization-Enabled Perceptual Control in Wearable Vibrotactile Systems* (공동 제1저자, Accepted)를 수동 항목으로 추가하고 대표 논문에 포함했습니다. 아직 Scholar에 없으므로 인용 지표와 Scholar 편수에는 반영되지 않습니다.
+2026-10-24: Nature Communications 게재 확정 논문 *Synchronization-Enabled Perceptual Control in Wearable Vibrotactile Systems* (공동 제1저자, Accepted)를 수동 항목으로 추가하고 대표 논문에 포함했습니다. 상단의 편수 지표는 "Publications"로 바꿔 메인 목록 전체(Scholar 논문 + `in_main_list` 수동 논문)를 세고, 인용 수와 h-index는 계속 Scholar 집계만 사용합니다.
 
 2026-10-02 확인: Scholar 8편, 기존 사이트에서만 확인된 발표 5건. 인용 수 85, h-index 4. 인용 지표는 Scholar 집계이며 추가 발표 수와 혼합하지 않습니다.
 
