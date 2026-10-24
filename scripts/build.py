@@ -57,7 +57,7 @@ def publications(snapshot, overrides, additional):
         paper = dict(article)
         extra = overrides.get(paper["id"], {})
         # Scholar owns the title, publication year, venue, abbreviated authors, and citation count.
-        for key in ("type", "pdf", "publisher_url", "full_authors", "featured", "venue_label", "award"):
+        for key in ("type", "pdf", "publisher_url", "full_authors", "featured", "venue_label", "award", "status", "note"):
             if key in extra:
                 paper[key] = extra[key]
         paper["source"] = "Google Scholar"
@@ -76,6 +76,12 @@ def publications(snapshot, overrides, additional):
         p["pdf"] = safe_url(p.get("pdf", ""), local=True)
         p["publisher_url"] = safe_url(p.get("publisher_url", ""))
         p["scholar_url"] = safe_url(p.get("scholar_url", ""))
+        p["status"] = p.get("status") or ""
+        p["note"] = p.get("note") or ""
+        p["link"] = p["publisher_url"] or p["scholar_url"]
+        # Scholar records and manually added peer-reviewed papers (e.g. accepted, not yet indexed)
+        # share the main publication list; everything else stays in the additional section.
+        p["listed"] = p["source"] == "Google Scholar" or bool(p.get("in_main_list"))
     return sorted(result, key=lambda p: (-(p.get("year") or 0), p["title"].casefold()))
 
 
@@ -115,22 +121,27 @@ def pdf_cv(profile, papers, sync_date, destination):
     section("Awards")
     for a in profile["awards"]:
         story.append(para(f'<b>{a["year"]} · {clean(a["title"])}</b><br/>{clean(a["venue"])}'))
-    section("Publications indexed in Google Scholar")
-    story.append(para("Titles and years follow the Google Scholar profile. Complete author names and existing PDF links are retained where available.", "CVSmall"))
-    indexed = [p for p in papers if p["source"] == "Google Scholar"]
-    additional = [p for p in papers if p["source"] != "Google Scholar"]
+    section("Publications")
+    story.append(para("Titles and years follow the Google Scholar profile where indexed; accepted papers not yet indexed are marked. Complete author names and existing PDF links are retained where available.", "CVSmall"))
+    listed = [p for p in papers if p["listed"]]
+    additional = [p for p in papers if not p["listed"]]
     def pub(p, index):
         label = f'{index}. {clean(p["title"])}'
-        link = p["publisher_url"] or p["scholar_url"]
+        link = p["link"]
         title = f'<b>{label}</b>'
         if link:
             title = f'<link href="{html.escape(link,quote=True)}" color="#202032">{title}</link>'
-        contents = [para(title), para(clean(p["display_authors"]), "CVSmall"),
-                    para(clean(f'{p["venue"]} · {p.get("year") or "Year not listed"}'), "CVSmall")]
+        venue_line = f'{p["venue"]} · {p.get("year") or "Year not listed"}'
+        if p["status"]:
+            venue_line += f' · {p["status"]}'
+        contents = [para(title), para(clean(p["display_authors"]), "CVSmall")]
+        if p["note"]:
+            contents.append(para(clean(p["note"]), "CVSmall"))
+        contents.append(para(clean(venue_line), "CVSmall"))
         if p.get("award"):
             contents.append(para(f'<font color="#5842c3"><b>{clean(p["award"])}</b></font>', "CVSmall"))
         return KeepTogether(contents + [Spacer(1, 5)])
-    for i, p in enumerate(indexed, 1):
+    for i, p in enumerate(listed, 1):
         story.append(pub(p, i))
     if additional:
         section("Additional presentations and posters")
@@ -169,10 +180,11 @@ def main():
     date = snapshot["last_successful_sync"][:10]
     env = Environment(loader=FileSystemLoader(ROOT / "templates"), autoescape=select_autoescape(["html"]))
     indexed = [p for p in papers if p["source"] == "Google Scholar"]
-    context = dict(profile=profile, papers=papers, indexed=indexed,
-                   additional=[p for p in papers if p["source"] != "Google Scholar"],
-                   featured=[p for p in indexed if p.get("featured")][:3],
-                   years=sorted({p["year"] for p in indexed if p.get("year")}, reverse=True),
+    listed = [p for p in papers if p["listed"]]
+    context = dict(profile=profile, papers=papers, indexed=indexed, listed=listed,
+                   additional=[p for p in papers if not p["listed"]],
+                   featured=[p for p in listed if p.get("featured")][:3],
+                   years=sorted({p["year"] for p in listed if p.get("year")}, reverse=True),
                    metrics=snapshot["metrics"], sync_date=date, types=TYPES, sync_status=sync_status)
     (ROOT / "index.html").write_text(env.get_template("index.html").render(**context), encoding="utf-8")
     (ROOT / "data/publications.json").write_text(json.dumps(papers, ensure_ascii=False, indent=2)+"\n", encoding="utf-8")
@@ -193,7 +205,7 @@ def main():
         shutil.copy2(ROOT / name, output / name)
     (output / "data").mkdir(exist_ok=True)
     shutil.copy2(ROOT / "data/publications.json", output / "data/publications.json")
-    print(f"Built website + PDF CV: {len(indexed)} Scholar publications, {len(papers)-len(indexed)} additional records.")
+    print(f"Built website + PDF CV: {len(indexed)} Scholar publications, {len(listed)-len(indexed)} manual main-list papers, {len(papers)-len(listed)} additional records.")
 
 
 if __name__ == "__main__":

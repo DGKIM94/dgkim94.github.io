@@ -54,7 +54,7 @@ GitHub는 활동이 없는 공개 저장소의 예약 작업을 60일 후 비활
 | `data/scholar.json` | 마지막 정상 Scholar 응답; 자동 생성 |
 | `data/scholar-sync-status.json` | 최근 갱신 결과와 마지막 정상 갱신 시점 |
 | `data/publication-overrides.json` | Scholar 논문 ID별 전체 저자명, PDF, 분류, 대표 논문 여부, 수상 표시 |
-| `data/additional-publications.json` | Scholar에 없는 추가 발표 |
+| `data/additional-publications.json` | Scholar에 없는 추가 발표. `in_main_list: true`인 항목(게재 확정 논문 등)은 메인 목록·대표 논문에 포함 |
 | `templates/index.html` | 홈페이지 구조 |
 | `style.css` | 색상, 레이아웃, 모바일 디자인 |
 | `script.js` | 검색, 필터, 저자 강조 |
@@ -62,7 +62,11 @@ GitHub는 활동이 없는 공개 저장소의 예약 작업을 60일 후 비활
 
 `index.html`, `data/publications.json`, `files/DongGeunKim_CV.pdf`는 생성 결과이므로 지속할 수정은 원본 데이터/템플릿에 적용합니다. 새 Scholar 논문의 학회 유형은 학술지/학회명으로 기본 분류되며, 정확한 국내·국제·포스터 구분은 overrides에서 지정할 수 있습니다. 기존 추가 발표가 나중에 Scholar에 등록되면 해당 추가 항목에 `scholar_id`를 넣어 중복을 방지할 수 있습니다.
 
+Scholar에 아직 없는 게재 확정 논문은 `data/additional-publications.json`에 `in_main_list: true`로 넣으면 메인 목록과 연도 필터에 포함되고, `featured: true`이면 대표 논문 후보가 됩니다. `status`(예: `Accepted`)는 배지로, `note`(예: 공동 제1저자 표기)는 저자 아래 작은 글씨로 표시되며 PDF CV에도 함께 들어갑니다. 이 두 필드는 overrides에서도 Scholar 논문에 지정할 수 있습니다. DOI가 나오면 `publisher_url`을 채우고, Scholar에 등록되면 `scholar_id`를 넣어 중복을 막습니다.
+
 ## 이번 반영 기준
+
+2026-10-24: Nature Communications 게재 확정 논문 *Synchronization-Enabled Perceptual Control in Wearable Vibrotactile Systems* (공동 제1저자, Accepted)를 수동 항목으로 추가하고 대표 논문에 포함했습니다. 아직 Scholar에 없으므로 인용 지표와 Scholar 편수에는 반영되지 않습니다.
 
 2026-10-02 확인: Scholar 8편, 기존 사이트에서만 확인된 발표 5건. 인용 수 85, h-index 4. 인용 지표는 Scholar 집계이며 추가 발표 수와 혼합하지 않습니다.
 

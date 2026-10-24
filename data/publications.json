@@ -16,7 +16,11 @@
     "source": "Google Scholar",
     "type_label": "Conference",
     "display_authors": "Dong-Geun Kim, Geunho Lee, Suheon Nam, Chaeyong Park, Seungmoon Choi",
-    "pdf": ""
+    "pdf": "",
+    "status": "",
+    "note": "",
+    "link": "https://ieeexplore.ieee.org/abstract/document/11495459/",
+    "listed": true
   },
   {
     "id": "XD8q7lsAAAAJ:ufrVoPGSRksC",
@@ -32,7 +36,32 @@
     "display_authors": "K Kwon, SH Han, S Choi, B Jeong, J Kim, J Lee, DG Kim, W Lee",
     "venue_label": "Journal",
     "pdf": "",
-    "publisher_url": ""
+    "publisher_url": "",
+    "status": "",
+    "note": "",
+    "link": "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=XD8q7lsAAAAJ&pagesize=100&citation_for_view=XD8q7lsAAAAJ:ufrVoPGSRksC",
+    "listed": true
+  },
+  {
+    "type": "journal",
+    "year": 2026,
+    "title": "Synchronization-Enabled Perceptual Control in Wearable Vibrotactile Systems",
+    "authors": "Taeji Lee†, Dong-Geun Kim†, Hee-Sup Shin†, Myung-Kun Chung†, Jaewon Lim, Yeonho Kim, Hyein Jung, Chan Shin, Jay Young Kwak, Min-Seung Jo, Kyoung-Ho Ha, Minsu Park, Hyoyoung Jeong, Yei Hwan Jung, J. Edward Colgate, Seungmoon Choi*, Jae-Young Yoo*, John A. Rogers*, and Jin-Tae Kim*",
+    "venue": "Nature Communications",
+    "status": "Accepted",
+    "note": "†Co-first authors · *Co-corresponding authors",
+    "pdf": "",
+    "id": "manual-natcomms-2026",
+    "source": "Manual entry",
+    "publisher_url": "",
+    "in_main_list": true,
+    "featured": true,
+    "venue_label": "Nature Communications",
+    "type_label": "Journal",
+    "display_authors": "Taeji Lee†, Dong-Geun Kim†, Hee-Sup Shin†, Myung-Kun Chung†, Jaewon Lim, Yeonho Kim, Hyein Jung, Chan Shin, Jay Young Kwak, Min-Seung Jo, Kyoung-Ho Ha, Minsu Park, Hyoyoung Jeong, Yei Hwan Jung, J. Edward Colgate, Seungmoon Choi*, Jae-Young Yoo*, John A. Rogers*, and Jin-Tae Kim*",
+    "scholar_url": "",
+    "link": "",
+    "listed": true
   },
   {
     "id": "XD8q7lsAAAAJ:eQOLeE2rZwMC",
@@ -50,7 +79,11 @@
     "venue_label": "IEEE ToH",
     "source": "Google Scholar",
     "type_label": "Journal",
-    "display_authors": "Dong-Geun Kim, Seungmoon Choi"
+    "display_authors": "Dong-Geun Kim, Seungmoon Choi",
+    "status": "",
+    "note": "",
+    "link": "https://ieeexplore.ieee.org/document/11045208",
+    "listed": true
   },
   {
     "type": "poster_intl",
@@ -65,7 +98,11 @@
     "type_label": "Poster / Demo",
     "display_authors": "Dong-Geun Kim, Suheon Nam, Geunho Lee, Chaeyong Park and Seungmoon Choi",
     "venue_label": "Poster / Demo",
-    "scholar_url": ""
+    "scholar_url": "",
+    "status": "",
+    "note": "",
+    "link": "",
+    "listed": false
   },
   {
     "type": "conf_dom",
@@ -80,7 +117,11 @@
     "type_label": "Domestic conference",
     "display_authors": "Dong-Geun Kim and Seungmoon Choi",
     "venue_label": "Domestic conference",
-    "scholar_url": ""
+    "scholar_url": "",
+    "status": "",
+    "note": "",
+    "link": "",
+    "listed": false
   },
   {
     "id": "XD8q7lsAAAAJ:Y0pCki6q_DkC",
@@ -98,7 +139,11 @@
     "venue_label": "EuroHaptics",
     "source": "Google Scholar",
     "type_label": "Conference",
-    "display_authors": "Dong-Geun Kim and Seungmoon Choi"
+    "display_authors": "Dong-Geun Kim and Seungmoon Choi",
+    "status": "",
+    "note": "",
+    "link": "https://dl.acm.org/doi/10.1007/978-3-031-70061-3_1",
+    "listed": true
   },
   {
     "type": "poster_dom",
@@ -113,7 +158,11 @@
     "type_label": "Domestic poster / Demo",
     "display_authors": "Jeongwoo Kim, Jungeun Lee, Dong-Geun Kim, Ki-Min Kwon, Beomyoung Chung, Junseong Park, Taeuk Kang, Sangji Moon, Wonseok Leee, Sung H. Han, and Seungmoon Choi",
     "venue_label": "Domestic poster / Demo",
-    "scholar_url": ""
+    "scholar_url": "",
+    "status": "",
+    "note": "",
+    "link": "",
+    "listed": false
   },
   {
     "id": "XD8q7lsAAAAJ:W7OEmFMy1HYC",
@@ -131,7 +180,11 @@
     "venue_label": "ACM CHI",
     "source": "Google Scholar",
     "type_label": "Conference",
-    "display_authors": "Gyeore Yun, Minjae Mun, Jungeun Lee, Dong-Geun Kim, Hong Z Tan, and Seungmoon Choi"
+    "display_authors": "Gyeore Yun, Minjae Mun, Jungeun Lee, Dong-Geun Kim, Hong Z Tan, and Seungmoon Choi",
+    "status": "",
+    "note": "",
+    "link": "https://dl.acm.org/doi/full/10.1145/3544548.3580787",
+    "listed": true
   },
   {
     "type": "poster_intl",
@@ -146,7 +199,11 @@
     "type_label": "Poster / Demo",
     "display_authors": "Gyeore Yun, Jungeun Lee, Dong-Geun Kim, Minjae Mun, Hong Z. Tan, and Seungmoon Choi",
     "venue_label": "Poster / Demo",
-    "scholar_url": ""
+    "scholar_url": "",
+    "status": "",
+    "note": "",
+    "link": "",
+    "listed": false
   },
   {
     "id": "XD8q7lsAAAAJ:zYLM7Y9cAGgC",
@@ -164,7 +221,11 @@
     "venue_label": "IEEE ToH",
     "source": "Google Scholar",
     "type_label": "Journal",
-    "display_authors": "Dong-Geun Kim, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi"
+    "display_authors": "Dong-Geun Kim, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi",
+    "status": "",
+    "note": "",
+    "link": "https://ieeexplore.ieee.org/document/10337769",
+    "listed": true
   },
   {
     "type": "conf_dom",
@@ -179,7 +240,11 @@
     "type_label": "Domestic conference",
     "display_authors": "Dong-Geun Kim, Jungeun Lee, Gyeore Yun, Hong Z. Tan, and Seungmoon Choi",
     "venue_label": "Domestic conference",
-    "scholar_url": ""
+    "scholar_url": "",
+    "status": "",
+    "note": "",
+    "link": "",
+    "listed": false
   },
   {
     "id": "XD8q7lsAAAAJ:IjCSPb-OGe4C",
@@ -197,7 +262,11 @@
     "venue_label": "SIGGRAPH Asia",
     "source": "Google Scholar",
     "type_label": "Poster / Demo",
-    "display_authors": "Dong-Geun Kim, Jungeun Lee, and Seungmoon Choi"
+    "display_authors": "Dong-Geun Kim, Jungeun Lee, and Seungmoon Choi",
+    "status": "",
+    "note": "",
+    "link": "https://dl.acm.org/doi/abs/10.1145/3550082.3564177",
+    "listed": true
   },
   {
     "id": "XD8q7lsAAAAJ:YsMSGLbcyi4C",
@@ -215,7 +284,11 @@
     "venue_label": "KIISE",
     "source": "Google Scholar",
     "type_label": "Domestic conference",
-    "display_authors": "Dong-Geun Kim, Jungeun Lee and Seungmoon Choi"
+    "display_authors": "Dong-Geun Kim, Jungeun Lee and Seungmoon Choi",
+    "status": "",
+    "note": "",
+    "link": "https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11224329",
+    "listed": true
   },
   {
     "id": "XD8q7lsAAAAJ:u5HHmVD_uO8C",
@@ -233,6 +306,10 @@
     "venue_label": "ACM CHI",
     "source": "Google Scholar",
     "type_label": "Conference",
-    "display_authors": "Chaeyong Park, Jeongwoo Kim, Dong-Geun Kim, Seungjae Oh, and Seungmoon Choi"
+    "display_authors": "Chaeyong Park, Jeongwoo Kim, Dong-Geun Kim, Seungjae Oh, and Seungmoon Choi",
+    "status": "",
+    "note": "",
+    "link": "https://dl.acm.org/doi/abs/10.1145/3491102.3501849",
+    "listed": true
   }
 ]

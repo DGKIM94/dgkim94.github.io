@@ -1,5 +1,21 @@
 [
   {
+    "type": "journal",
+    "year": 2026,
+    "title": "Synchronization-Enabled Perceptual Control in Wearable Vibrotactile Systems",
+    "authors": "Taeji Lee†, Dong-Geun Kim†, Hee-Sup Shin†, Myung-Kun Chung†, Jaewon Lim, Yeonho Kim, Hyein Jung, Chan Shin, Jay Young Kwak, Min-Seung Jo, Kyoung-Ho Ha, Minsu Park, Hyoyoung Jeong, Yei Hwan Jung, J. Edward Colgate, Seungmoon Choi*, Jae-Young Yoo*, John A. Rogers*, and Jin-Tae Kim*",
+    "venue": "Nature Communications",
+    "status": "Accepted",
+    "note": "†Co-first authors · *Co-corresponding authors",
+    "pdf": "",
+    "id": "manual-natcomms-2026",
+    "source": "Manual entry",
+    "publisher_url": "",
+    "in_main_list": true,
+    "featured": true,
+    "venue_label": "Nature Communications"
+  },
+  {
     "type": "poster_intl",
     "year": 2025,
     "title": "Tactile Localization in Forearm-Mounted Multi-Tactor Displays: The Effect of Tactor Number and Position",

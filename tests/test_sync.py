@@ -54,6 +54,22 @@ class SyncTests(unittest.TestCase):
         self.assertEqual(canonical['year'],2023)
         self.assertEqual(canonical['title'],'Scholar title')
         self.assertEqual(len(items),2)
+        self.assertFalse(next(p for p in items if p['id']=='manual')['listed'])
+    def test_accepted_manual_paper_joins_main_list(self):
+        article={'id':'a','title':'Scholar paper','authors':'DG Kim','venue':'Journal','year':2025}
+        accepted={'id':'manual-accepted','title':'Accepted paper','authors':'A Lee†, DG Kim†','venue':'Nature Communications','year':2026,
+                  'type':'journal','source':'Manual entry','in_main_list':True,'featured':True,'status':'Accepted','note':'†Co-first authors'}
+        poster={'id':'manual-poster','title':'Poster','authors':'DG Kim','venue':'Domestic meeting','year':2024,'type':'poster_dom','source':'Existing website'}
+        items=publications({'articles':[article]}, {}, [accepted, poster])
+        by_id={p['id']:p for p in items}
+        self.assertTrue(by_id['a']['listed'])
+        self.assertTrue(by_id['manual-accepted']['listed'])
+        self.assertFalse(by_id['manual-poster']['listed'])
+        self.assertEqual(by_id['manual-accepted']['status'],'Accepted')
+        self.assertEqual(by_id['manual-accepted']['note'],'†Co-first authors')
+        self.assertEqual(by_id['manual-accepted']['link'],'')
+        self.assertEqual(by_id['a']['status'],'')
+        self.assertEqual(items[0]['id'],'manual-accepted')
 
 
 class ActionFallbackTests(unittest.TestCase):
