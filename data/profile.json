@@ -11,21 +11,21 @@
   "linkedin_url": "https://www.linkedin.com/in/dong-geun-kim-61609b315",
   "instagram_url": "https://instagram.com/dg_kim331",
   "lab_url": "http://interaction.postech.ac.kr",
-  "bio": "I am a Ph.D. candidate at POSTECH Interaction Lab. I study how touch can deliver information, shape perception, and create new ways to interact. My current work explores a tactile Korean system for people with sensory impairments.",
+  "bio":"I am a Ph.D. candidate in the Interaction Lab at POSTECH. My research is on vibrotactile perception and tactile communication: how well people can identify and localize vibration patterns on the forearm, and how those patterns can be used to carry information. Right now I am building a tactile Korean system for people with visual or hearing impairments. I have also worked on mid-air ultrasonic haptics and on matching sounds to touch.",
   "research": [
     {
       "name": "Tactile communication",
-      "description": "Encoding language and information into patterns that can be felt on the skin.",
+      "description": "Delivering text and other information through vibration patterns on the forearm, so it can be read by touch.",
       "tag": "LANGUAGE & TOUCH"
     },
     {
       "name": "Vibrotactile perception",
-      "description": "Understanding how the timing and location of vibration shape what we perceive.",
+      "description": "Measuring how the number, placement, and timing of tactors change what people can identify and where they feel it.",
       "tag": "HUMAN PERCEPTION"
     },
     {
       "name": "Mid-air haptics",
-      "description": "Exploring contactless touch and how wrist vibration enhances ultrasonic sensations.",
+      "description": "Making weak ultrasonic mid-air stimuli feel stronger and easier to recognize by adding vibration at the wrist.",
       "tag": "HAPTIC INTERFACES"
     }
   ],
@@ -89,31 +89,31 @@
     {
       "name": "Tactile Korean System for the Visually and Hearing Impaired (PM)",
       "period": "IITP | Jan. 2025 – Present",
-      "description": "Conducting research on tactile delivery of Korean language using vibrotactile arrays to support communication for people with sensory disabilities.",
+      "description": "Developing a way to deliver Korean text through a wearable vibrotactile array, for people with visual or hearing impairments.",
       "link": ""
     },
     {
       "name": "Mid-air Haptic Rendering for Digital Twin (PM)",
       "period": "IITP | Jan. 2023 – Dec. 2024",
-      "description": "Leading the development of real-time mid-air haptic rendering technologies. Researched enhancing perceived intensity of weak stimuli using cognitive modulation.",
+      "description": "Real-time mid-air haptic rendering for digital twins. Studied how wrist vibration raises the perceived intensity of weak ultrasonic stimuli and improves pattern recognition.",
       "link": "https://link.springer.com/chapter/10.1007/978-3-031-70061-3_1"
     },
     {
       "name": "Investigating the Luxuriousness of Haptic Warning",
       "period": "Hyundai Motors | Apr. 2023 - Apr. 2024",
-      "description": "Explored user perception of luxurious haptic warning feedback on steering wheels.",
+      "description": "User studies on steering-wheel vibration warnings and what makes them feel luxurious.",
       "link": ""
     },
     {
       "name": "Performance Metric for User Experience",
       "period": "Google | Sep. 2021 – Jul. 2023",
-      "description": "Designed metrics to assess UX in digital environments. Improved UX through cross-modal matching of sound and touch.",
+      "description": "Metrics for user experience in digital environments, including sound-to-touch matching for short sounds.",
       "link": "https://ieeexplore.ieee.org/abstract/document/10337769"
     },
     {
       "name": "Multimodal Haptic Tool for AR Sports",
       "period": "KOCCA | Jun. 2020 – Dec. 2022",
-      "description": "Designed devices rendering realistic haptic sensations by combining vibration, shear force, and impact feedback.",
+      "description": "MMGrip, a handheld device that combines vibration, impact, and shear to render contact realistically.",
       "link": "https://dl.acm.org/doi/abs/10.1145/3550082.3564177"
     }
   ]
